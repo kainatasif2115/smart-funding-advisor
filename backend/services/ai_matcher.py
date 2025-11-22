@@ -42,40 +42,40 @@ class AIMatcherService:
         
         prompt = f"""Analyze this Finnish company and provide a comprehensive profile in JSON format:
 
-Company Name: {company_data.get('name', 'N/A')}
-Business ID: {company_data.get('business_id', 'N/A')}
-Industry: {company_data.get('industry', 'N/A')}
-Company Form: {company_data.get('company_form', 'N/A')}
-Registration Date: {company_data.get('registration_date', 'N/A')}
-City: {company_data.get('city', 'N/A')}
+        Company Name: {company_data.get('name', 'N/A')}
+        Business ID: {company_data.get('business_id', 'N/A')}
+        Industry: {company_data.get('industry', 'N/A')}
+        Company Form: {company_data.get('company_form', 'N/A')}
+        Registration Date: {company_data.get('registration_date', 'N/A')}
+        City: {company_data.get('city', 'N/A')}
 
-Based on this information, provide:
+        Based on this information, provide:
 
-1. **description**: 2-3 sentence summary of what the company does and for whom
-2. **company_size**: Classify as "small", "medium", or "large" based on industry standards
-3. **growth_stage**: Classify as "pre-seed", "seed", "early-stage", "growth", or "scale-up"
-4. **employees**: Estimate the number of employees (reasonable guess based on company age and type)
-5. **revenue**: Estimate annual revenue class as "Under 1M EUR", "1M - 5M EUR", "5M - 20M EUR", or "20M+ EUR"
-6. **funding_purpose**: What this type of company typically needs funding for (1 paragraph)
-7. **funding_amount**: Typical funding range for this stage/size (e.g., "€50k-€200k")
-8. **keywords**: 5-8 relevant keywords/tags (industry, technology, market, location, characteristics)
+        1. **description**: 2-3 sentence summary of what the company does and for whom
+        2. **company_size**: Classify as "small", "medium", or "large" based on industry standards
+        3. **growth_stage**: Classify as "pre-seed", "seed", "early-stage", "growth", or "scale-up"
+        4. **employees**: Estimate the number of employees (reasonable guess based on company age and type)
+        5. **revenue**: Estimate annual revenue class as "Under 1M EUR", "1M - 5M EUR", "5M - 20M EUR", or "20M+ EUR"
+        6. **funding_purpose**: What this type of company typically needs funding for (1 paragraph)
+        7. **funding_amount**: Typical funding range for this stage/size (e.g., "€50k-€200k")
+        8. **keywords**: 5-8 relevant keywords/tags (industry, technology, market, location, characteristics)
 
-Return ONLY valid JSON:
-{{
-  "business_id": "{company_data.get('business_id', '')}",
-  "name": "{company_data.get('name', '')}",
-  "description": "...",
-  "industry": "{company_data.get('industry', '')}",
-  "company_size": "small|medium|large",
-  "growth_stage": "pre-seed|seed|early-stage|growth|scale-up",
-  "employees": 25,
-  "revenue": "Under 1M EUR|1M - 5M EUR|5M - 20M EUR|20M+ EUR",
-  "city": "{company_data.get('city', '')}",
-  "country": "Finland",
-  "funding_purpose": "...",
-  "funding_amount": "€X-€Y",
-  "keywords": ["keyword1", "keyword2", ...]
-}}"""
+        Return ONLY valid JSON:
+        {{
+            "business_id": "{company_data.get('business_id', '')}",
+            "name": "{company_data.get('name', '')}",
+            "description": "...",
+            "industry": "{company_data.get('industry', '')}",
+            "company_size": "small|medium|large",
+            "growth_stage": "pre-seed|seed|early-stage|growth|scale-up",
+            "employees": 25,
+            "revenue": "Under 1M EUR|1M - 5M EUR|5M - 20M EUR|20M+ EUR",
+            "city": "{company_data.get('city', '')}",
+            "country": "Finland",
+            "funding_purpose": "...",
+            "funding_amount": "€X-€Y",
+            "keywords": ["keyword1", "keyword2", ...]
+        }}"""
         
         try:
             chat_completion = self.client.chat.completions.create(
@@ -132,24 +132,24 @@ Return ONLY valid JSON:
         
         prompt = f"""Based on the following company information, create a comprehensive business summary in 2-3 paragraphs:
 
-Company Name: {company_data.get('name', 'N/A')}
-Business ID: {company_data.get('business_id', 'N/A')}
-Industry: {company_data.get('industry', 'N/A')}
-Company Form: {company_data.get('company_form', 'N/A')}
-Registration Date: {company_data.get('registration_date', 'N/A')}
+        Company Name: {company_data.get('name', 'N/A')}
+        Business ID: {company_data.get('business_id', 'N/A')}
+        Industry: {company_data.get('industry', 'N/A')}
+        Company Form: {company_data.get('company_form', 'N/A')}
+        Registration Date: {company_data.get('registration_date', 'N/A')}
 
-Additional details:
-Size: {company_data.get('size', 'N/A')}
-Employees: {company_data.get('employees', 'N/A')}
-Growth Stage: {company_data.get('growth_stage', 'N/A')}
-Description: {company_data.get('description', 'N/A')}
+        Additional details:
+        Size: {company_data.get('size', 'N/A')}
+        Employees: {company_data.get('employees', 'N/A')}
+        Growth Stage: {company_data.get('growth_stage', 'N/A')}
+        Description: {company_data.get('description', 'N/A')}
 
-Create a professional summary that includes:
-1. Company overview and industry position
-2. Stage of development and growth trajectory
-3. Key characteristics relevant for funding assessment
+        Create a professional summary that includes:
+        1. Company overview and industry position
+        2. Stage of development and growth trajectory
+        3. Key characteristics relevant for funding assessment
 
-Keep it concise, factual, and focused on information relevant for funding advisors."""
+        Keep it concise, factual, and focused on information relevant for funding advisors."""
         
         try:
             chat_completion = self.client.chat.completions.create(
@@ -194,43 +194,43 @@ Keep it concise, factual, and focused on information relevant for funding adviso
         
         prompt = f"""You are a funding advisor expert. Analyze the following company profile and match it with the most suitable funding programs.
 
-COMPANY PROFILE:
-Name: {company_data.get('name', 'N/A')}
-Industry: {company_data.get('industry', 'N/A')}
-Size: {company_data.get('size', 'N/A')}
-Employees: {company_data.get('employees', 'N/A')}
-Growth Stage: {company_data.get('growth_stage', 'N/A')}
-Company Form: {company_data.get('company_form', 'N/A')}
-Description: {company_data.get('description', 'N/A')}
+        COMPANY PROFILE:
+        Name: {company_data.get('name', 'N/A')}
+        Industry: {company_data.get('industry', 'N/A')}
+        Size: {company_data.get('size', 'N/A')}
+        Employees: {company_data.get('employees', 'N/A')}
+        Growth Stage: {company_data.get('growth_stage', 'N/A')}
+        Company Form: {company_data.get('company_form', 'N/A')}
+        Description: {company_data.get('description', 'N/A')}
 
-AVAILABLE FUNDING PROGRAMS:
-{programs_text}
+        AVAILABLE FUNDING PROGRAMS:
+        {programs_text}
 
-TASK:
-For each funding program, provide:
-1. A relevance score (0-100) indicating how well the program matches the company
-2. A clear justification explaining why this program is or isn't suitable
-3. Specific eligibility considerations
+        TASK:
+        For each funding program, provide:
+        1. A relevance score (0-100) indicating how well the program matches the company
+        2. A clear justification explaining why this program is or isn't suitable
+        3. Specific eligibility considerations
 
-Return ONLY a valid JSON array with this structure:
-[
-  {{
-    "program_index": 0,
-    "relevance_score": 85,
-    "justification": "Detailed explanation of why this program matches...",
-    "eligibility_notes": "Specific eligibility considerations...",
-    "recommended": true
-  }},
-  ...
-]
+        Return ONLY a valid JSON array with this structure:
+        [
+        {{
+            "program_index": 0,
+            "relevance_score": 85,
+            "justification": "Detailed explanation of why this program matches...",
+            "eligibility_notes": "Specific eligibility considerations...",
+            "recommended": true
+        }},
+        ...
+        ]
 
-Focus on:
-- Company size and stage alignment
-- Industry and focus area match
-- Eligibility criteria compatibility
-- Strategic fit for company's needs
+        Focus on:
+        - Company size and stage alignment
+        - Industry and focus area match
+        - Eligibility criteria compatibility
+        - Strategic fit for company's needs
 
-Return ONLY the JSON array, no other text."""
+        Return ONLY the JSON array, no other text."""
         
         try:
             chat_completion = self.client.chat.completions.create(
