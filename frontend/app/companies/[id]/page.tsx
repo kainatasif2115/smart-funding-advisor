@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import Navbar from '@/components/Navbar'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { companiesApi, investorsApi } from '@/lib/api'
+import { GlassCard, LiquidButton, MorphingBackground } from '@/components/glass'
 
 export default function CompanyDetailsPage() {
   const params = useParams()
@@ -34,10 +36,10 @@ export default function CompanyDetailsPage() {
   const handleFetchFunding = async () => {
     setFetchingFunding(true)
     setError('')
-
     try {
       const response = await investorsApi.fetch(Number(params.id))
       setFunding(response.matches || [])
+      setDisplayCount(10)
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to fetch funding recommendations')
     } finally {
@@ -47,11 +49,14 @@ export default function CompanyDetailsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-b-2 border-primary-600 mb-4"></div>
-          <p className="text-gray-600">Loading company details...</p>
+      <div className="min-h-screen relative">
+        <MorphingBackground />
+        <div className="flex items-center justify-center min-h-screen">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            className="w-20 h-20 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full"
+          />
         </div>
       </div>
     )
@@ -59,367 +64,356 @@ export default function CompanyDetailsPage() {
 
   if (error && !company) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-lg">
-            {error}
-          </div>
+      <div className="min-h-screen relative">
+        <MorphingBackground />
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <GlassCard className="p-8">
+            <p className="text-red-400 text-center">{error}</p>
+          </GlassCard>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="min-h-screen relative">
+      <MorphingBackground />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Company Summary Tile */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
-          <div className="flex items-start justify-between mb-6">
-            <div className="flex-1">
-              {/* Company Name & Business ID */}
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">{company?.name}</h1>
-              {company?.business_id && (
-                <p className="text-lg text-gray-500 font-medium mb-4">
-                  Y-tunnus: {company.business_id}
-                </p>
-              )}
-              
-              {/* Company Description */}
-              {company?.description && (
-                <p className="text-gray-700 text-base leading-relaxed mb-5 max-w-3xl">
-                  {company.description}
-                </p>
-              )}
-              
-              {/* Stage and Size Badges */}
-              <div className="flex gap-3 mb-5">
-                {company?.growth_stage && (
-                  <span className="inline-flex items-center px-4 py-2 rounded-lg bg-purple-100 text-purple-700 text-sm font-semibold">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                    {company.growth_stage}
-                  </span>
-                )}
-                {company?.company_size && (
-                  <span className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-100 text-blue-700 text-sm font-semibold">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    {company.company_size}
-                  </span>
-                )}
+      {/* Glass Navbar */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-emerald-900/30"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/dashboard" className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-900/50">
+                <span className="text-white font-bold text-xl">💎</span>
               </div>
-              
-              {/* Info Row */}
-              <div className="flex flex-wrap gap-6 mb-6 text-sm text-gray-600">
-                {company?.industry && (
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span><strong>Sector:</strong> {company.industry}</span>
-                  </div>
-                )}
-                {(company?.country || company?.city) && (
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>
-                      <strong>Location:</strong> {company.country || 'Finland'}
-                      {company.city && `, ${company.city}`}
-                    </span>
-                  </div>
-                )}
-                {company?.employees && (
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span><strong>Employees:</strong> ~{company.employees}</span>
-                  </div>
-                )}
-                {company?.revenue && (
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span><strong>Revenue:</strong> {company.revenue}</span>
-                  </div>
-                )}
-                {company?.website && (
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    <a href={company.website.startsWith('http') ? company.website : `https://${company.website}`} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 hover:underline font-medium">
-                      Visit Website →
-                    </a>
-                  </div>
-                )}
-              </div>
-              
-              {/* Funding Need Section */}
-              {(company?.funding_purpose || company?.funding_amount) && (
-                <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-lg p-5 mb-5 border border-primary-100">
-                  <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Funding Need
-                  </h3>
-                  {company?.funding_purpose && (
-                    <p className="text-gray-700 mb-3 leading-relaxed">
-                      {company.funding_purpose}
-                    </p>
-                  )}
-                  {company?.funding_amount && (
-                    <p className="text-gray-900 font-semibold">
-                      Estimated need: {company.funding_amount}
-                    </p>
-                  )}
-                </div>
-              )}
-              
-              {/* Keyword Tags */}
-              {company?.keywords && company.keywords.length > 0 && (
-                <div>
-                  <div className="flex flex-wrap gap-2">
-                    {company.keywords.map((keyword: string, idx: number) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition"
-                      >
-                        {keyword}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            
-            <div className="flex gap-2">
-              <button
-                onClick={() => router.push(`/companies/${params.id}/edit`)}
-                className="px-4 py-2 text-primary-600 hover:bg-primary-50 border border-primary-600 rounded-lg transition flex items-center"
-              >
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-                Edit
-              </button>
-              <button
-                onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition flex-shrink-0"
-              >
-                ← Back
-              </button>
-            </div>
+              <span className="text-xl font-bold text-white">Smart Funding Advisor</span>
+            </Link>
+            <Link href="/dashboard">
+              <LiquidButton variant="ghost" size="sm">
+                ← Back to Dashboard
+              </LiquidButton>
+            </Link>
           </div>
         </div>
+      </motion.nav>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Company Profile Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <GlassCard className="p-8 mb-8">
+            <div className="flex items-start justify-between mb-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <h1 className="text-4xl font-bold text-gray-200">{company?.name}</h1>
+                  {company?.business_id && (
+                    <span className="px-4 py-2 bg-emerald-500/20 rounded-lg text-emerald-300 font-medium border border-emerald-700/30">
+                      Y-tunnus: {company.business_id}
+                    </span>
+                  )}
+                </div>
+                
+                {company?.description && (
+                  <p className="text-gray-100 text-lg leading-relaxed mb-6 max-w-4xl">
+                    {company.description}
+                  </p>
+                )}
+                
+                {/* Badges */}
+                <div className="flex gap-3 mb-6">
+                  {company?.growth_stage && (
+                    <motion.span 
+                      whileHover={{ scale: 1.05 }}
+                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-400/30 text-emerald-200 font-semibold flex items-center gap-2"
+                    >
+                      <span className="text-lg">📈</span>
+                      {company.growth_stage}
+                    </motion.span>
+                  )}
+                  {company?.company_size && (
+                    <motion.span 
+                      whileHover={{ scale: 1.05 }}
+                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-400/30 text-teal-200 font-semibold flex items-center gap-2"
+                    >
+                      <span className="text-lg">🏢</span>
+                      {company.company_size}
+                    </motion.span>
+                  )}
+                </div>
+                
+                {/* Info Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  {company?.industry && (
+                    <div className="bg-white/5 rounded-lg p-4 backdrop-blur">
+                      <p className="text-gray-200 text-sm mb-1 font-medium">Industry</p>
+                      <p className="text-gray-200 font-semibold">{company.industry}</p>
+                    </div>
+                  )}
+                  {company?.city && (
+                    <div className="bg-white/5 rounded-lg p-4 backdrop-blur">
+                      <p className="text-gray-200 text-sm mb-1 font-medium">Location</p>
+                      <p className="text-gray-200 font-semibold">{company.city}, {company.country || 'Finland'}</p>
+                    </div>
+                  )}
+                  {company?.employees && (
+                    <div className="bg-white/5 rounded-lg p-4 backdrop-blur">
+                      <p className="text-gray-200 text-sm mb-1 font-medium">Employees</p>
+                      <p className="text-gray-200 font-semibold">~{company.employees}</p>
+                    </div>
+                  )}
+                  {company?.revenue && (
+                    <div className="bg-white/5 rounded-lg p-4 backdrop-blur">
+                      <p className="text-gray-200 text-sm mb-1 font-medium">Revenue</p>
+                      <p className="text-gray-200 font-semibold">{company.revenue}</p>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Funding Need */}
+                {(company?.funding_purpose || company?.funding_amount) && (
+                  <div className="bg-gradient-to-r from-emerald-500/[0.05] to-teal-500/[0.05] rounded-xl p-6 border border-emerald-400/30">
+                    <h3 className="text-gray-200 font-bold mb-3 flex items-center gap-2">
+                      <span className="text-2xl">💰</span>
+                      Funding Need
+                    </h3>
+                    {company?.funding_purpose && (
+                      <p className="text-gray-100 mb-3">{company.funding_purpose}</p>
+                    )}
+                    {company?.funding_amount && (
+                      <p className="text-gray-200 font-semibold">Amount: {company.funding_amount}</p>
+                    )}
+                  </div>
+                )}
+              </div>
+              
+              <div className="flex gap-2">
+                <Link href={`/companies/${params.id}/edit`}>
+                  <LiquidButton variant="ghost" size="sm">
+                    ✏️ Edit
+                  </LiquidButton>
+                </Link>
+              </div>
+            </div>
+          </GlassCard>
+        </motion.div>
 
-        {/* Fetch Funding Button */}
+        {/* Fetch Funding CTA */}
         {funding.length === 0 && !fetchingFunding && (
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl shadow-lg p-8 text-center text-white mb-6">
-            <svg className="w-16 h-16 mx-auto mb-4 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <h2 className="text-2xl font-bold mb-2">Ready to Find Funding?</h2>
-            <p className="text-lg opacity-90 mb-6">
-              Let our AI analyze this company and discover the best funding opportunities
-            </p>
-            <button
-              onClick={handleFetchFunding}
-              className="px-8 py-4 bg-white text-primary-600 rounded-lg hover:bg-gray-50 font-semibold text-lg shadow-lg transition"
-            >
-              🚀 Fetch Funding Recommendations
-            </button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <GlassCard className="p-12 text-center mb-8 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border-emerald-900/30">
+              <motion.div
+                animate={{ 
+                  rotate: [0, 10, -10, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="text-6xl mb-6"
+              >
+                🚀
+              </motion.div>
+              <h2 className="text-3xl font-bold text-gray-200 mb-4">Ready to Find Funding?</h2>
+              <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+                Let our AI analyze {company?.name} and discover the best funding opportunities from 44 programs
+              </p>
+              <LiquidButton onClick={handleFetchFunding} size="lg" variant="primary">
+                ✨ Fetch Funding Recommendations
+              </LiquidButton>
+            </GlassCard>
+          </motion.div>
         )}
 
         {/* Loading State */}
         {fetchingFunding && (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center mb-6">
-            <div className="inline-block animate-spin rounded-full h-20 w-20 border-b-4 border-primary-600 mb-6"></div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Analyzing Company Profile...</h3>
-            <div className="space-y-2 max-w-md mx-auto text-gray-600">
-              <p className="flex items-center justify-center">
-                <span className="animate-pulse">⚡</span>
-                <span className="ml-2">Analyzing funding programs</span>
-              </p>
-              <p className="flex items-center justify-center">
-                <span className="animate-pulse">🤖</span>
-                <span className="ml-2">AI matching company profile with programs</span>
-              </p>
-              <p className="flex items-center justify-center">
-                <span className="animate-pulse">📊</span>
-                <span className="ml-2">Generating relevance scores and justifications</span>
-              </p>
-            </div>
-            <p className="mt-6 text-sm text-gray-500">This may take 15-30 seconds...</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <GlassCard className="p-16 text-center mb-8">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                className="inline-block w-20 h-20 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full mb-8"
+              />
+              <h3 className="text-2xl font-bold text-gray-200 mb-4">Analyzing Company Profile...</h3>
+              <div className="space-y-3 max-w-md mx-auto">
+                {['Analyzing 44 funding programs', 'AI matching company profile', 'Generating relevance scores'].map((text, i) => (
+                  <motion.p
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.2 }}
+                    className="text-gray-100 flex items-center justify-center gap-2 font-medium"
+                  >
+                    <span className="text-xl">⚡</span>
+                    {text}
+                  </motion.p>
+                ))}
+              </div>
+            </GlassCard>
+          </motion.div>
         )}
 
-        {/* Error State */}
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-lg mb-6">
-            {error}
-          </div>
+        {/* Error */}
+        {error && funding.length === 0 && (
+          <GlassCard className="p-6 mb-8 bg-red-500/10 border-red-400/30">
+            <p className="text-red-300 text-center font-medium">{error}</p>
+          </GlassCard>
         )}
 
-        {/* Funding Recommendations */}
+        {/* Funding Results */}
         {funding.length > 0 && (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-900">
-                Top {Math.min(displayCount, funding.length)} of {funding.length} Funding Recommendations
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-3xl font-bold text-gray-200">
+                Top {Math.min(displayCount, funding.length)} of {funding.length} Matches
               </h2>
-              <button
-                onClick={handleFetchFunding}
-                className="px-4 py-2 text-sm font-medium text-primary-600 hover:bg-primary-50 rounded-lg"
-              >
-                🔄 Refresh Recommendations
-              </button>
+              <LiquidButton onClick={handleFetchFunding} variant="ghost" size="sm">
+                🔄 Refresh
+              </LiquidButton>
             </div>
 
-            {funding.slice(0, displayCount).map((program, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition"
-              >
-                {/* Program Header */}
-                <div className={`px-6 py-4 ${
-                  program.relevance_score >= 80
-                    ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-b-2 border-green-200'
-                    : program.relevance_score >= 60
-                    ? 'bg-gradient-to-r from-blue-50 to-cyan-50 border-b-2 border-blue-200'
-                    : 'bg-gray-50 border-b border-gray-200'
-                }`}>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-gray-900">{program.name}</h3>
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          program.relevance_score >= 80
-                            ? 'bg-green-100 text-green-700'
-                            : program.relevance_score >= 60
-                            ? 'bg-blue-100 text-blue-700'
-                            : 'bg-gray-100 text-gray-700'
+            <div className="space-y-6">
+              {funding.slice(0, displayCount).map((program, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-[#020f12] rounded-2xl border border-teal-900/30 shadow-2xl shadow-black/50 overflow-hidden"
+                >
+                  {/* Header Row */}
+                  <div className="p-6 border-b border-teal-900/20">
+                    <div className="flex items-center justify-between flex-wrap gap-4">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <h3 className="text-2xl font-bold text-white">{program.name}</h3>
+                        <span className={`px-4 py-1.5 rounded-full font-semibold text-sm ${
+                          program.relevance_score >= 80 ? 'bg-emerald-950/50 text-emerald-400 border border-emerald-800/50' :
+                          program.relevance_score >= 60 ? 'bg-teal-950/50 text-teal-400 border border-teal-800/50' :
+                          'bg-slate-900/50 text-slate-400 border border-slate-700/50'
                         }`}>
                           {program.relevance_score}% Match
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600 font-medium">{program.provider}</p>
+                      {program.recommended && (
+                        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-amber-950/30 border border-amber-800/40">
+                          <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                          </svg>
+                          <span className="text-amber-400 font-semibold text-sm">Top Pick</span>
+                        </div>
+                      )}
                     </div>
-                    {program.recommended && (
-                      <span className="px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-semibold">
-                        ⭐ Highly Recommended
-                      </span>
-                    )}
                   </div>
-                </div>
 
-                {/* Program Details */}
-                <div className="p-6">
-                  <div className="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Description</h4>
-                      <p className="text-gray-700">{program.description}</p>
-                    </div>
-                    <div className="space-y-4">
+                  {/* Content */}
+                  <div className="p-6 space-y-6">
+                    {/* Info Row */}
+                    <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Funding Amount</h4>
-                        <p className="text-gray-700">{program.funding_amount}</p>
+                        <h4 className="text-white font-semibold mb-2 text-sm">Description</h4>
+                        <p className="text-slate-400 text-sm leading-relaxed">{program.description}</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Application Deadline</h4>
-                        <p className="text-gray-700">{program.deadline}</p>
+                        <h4 className="text-white font-semibold mb-2 text-sm">Funding Amount</h4>
+                        <p className="text-slate-400 text-sm leading-relaxed">{program.funding_amount}</p>
+                        <h4 className="text-white font-semibold mb-2 text-sm mt-4">Deadline</h4>
+                        <p className="text-slate-400 text-sm leading-relaxed">{program.deadline}</p>
                       </div>
                     </div>
-                  </div>
 
-                  {/* AI Justification */}
-                  <div className="bg-primary-50 rounded-lg p-4 mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                      <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                      AI Analysis: Why This Program Fits
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed">{program.justification}</p>
-                  </div>
+                    {/* AI Analysis Tile */}
+                    <div className="rounded-xl p-[2px] bg-gradient-to-r from-emerald-400 via-teal-400 to-yellow-400">
+                      <div className="rounded-xl bg-[#020f12] p-5">
+                        <div className="flex gap-4">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-teal-900/40 flex items-center justify-center border border-teal-700/30">
+                              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-teal-400">
+                                <path d="M16.334 7.49967L17.3757 5.20801L19.6673 4.16634L17.3757 3.12467L16.334 0.833008L15.2923 3.12467L13.0007 4.16634L15.2923 5.20801L16.334 7.49967ZM10.084 7.91634L8.00065 3.33301L5.91732 7.91634L1.33398 9.99967L5.91732 12.083L8.00065 16.6663L10.084 12.083L14.6673 9.99967L10.084 7.91634ZM16.334 12.4997L15.2923 14.7913L13.0007 15.833L15.2923 16.8747L16.334 19.1663L17.3757 16.8747L19.6673 15.833L17.3757 14.7913L16.334 12.4997Z" fill="currentColor"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-white font-bold mb-1">AI Analysis</h4>
+                            <p className="text-teal-400/70 text-xs mb-3">Automated matching based on industry and focus areas</p>
+                            <p className="text-slate-300 text-sm leading-relaxed">{program.justification}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                  {/* Eligibility */}
-                  <div className="bg-yellow-50 rounded-lg p-4 mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                      <svg className="w-5 h-5 mr-2 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Eligibility Requirements
-                    </h4>
-                    <p className="text-gray-700">{program.eligibility}</p>
-                    {program.eligibility_notes && (
-                      <p className="text-gray-600 text-sm mt-2 italic">{program.eligibility_notes}</p>
-                    )}
-                  </div>
+                        {/* Eligibility Tile */}
+                        <div className="bg-[#022020]/60 rounded-xl p-5 border border-emerald-900/30">
+                          <div className="flex gap-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-emerald-900/40 flex items-center justify-center border border-emerald-700/30">
+                            <svg className="w-6 h-6 text-emerald-400 fill-current" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-bold mb-1">Eligibility</h4>
+                          <p className="text-slate-300 text-sm leading-relaxed">{program.eligibility}</p>
+                        </div>
+                      </div>
+                    </div>
 
-                  {/* Focus Areas */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Focus Areas</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {program.focus_areas?.map((area: string, i: number) => (
-                        <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-                          {area}
-                        </span>
-                      ))}
+                    {/* Footer Row */}
+                    <div className="flex items-center justify-between gap-4 flex-wrap">
+                      <div className="flex flex-wrap gap-2">
+                        {program.focus_areas?.map((area: string, i: number) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1.5 rounded-full bg-slate-900/50 text-slate-400 text-xs font-medium border border-slate-800/50"
+                          >
+                            {area}
+                          </span>
+                        ))}
+                      </div>
+                      <a href={program.url} target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
+                        <button className="px-6 py-2.5 rounded-lg bg-[#5cc9ad] hover:bg-[#4db89c] text-[#0a2f23] font-semibold text-sm transition-colors shadow-lg shadow-teal-900/50">
+                          Learn More & Apply →
+                        </button>
+                      </a>
                     </div>
                   </div>
+                </motion.div>
+              ))}
 
-                  {/* Action Button */}
-                  <a
-                    href={program.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium"
+              {/* Load More */}
+              {displayCount < funding.length && (
+                <div className="text-center pt-6">
+                  <LiquidButton
+                    onClick={() => setDisplayCount(prev => Math.min(prev + 10, funding.length))}
+                    variant="primary"
+                    size="lg"
                   >
-                    Learn More & Apply
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                    Load More ({funding.length - displayCount} remaining)
+                  </LiquidButton>
                 </div>
-              </div>
-            ))}
-
-            {/* Load More Button */}
-            {displayCount < funding.length && (
-              <div className="text-center pt-6">
-                <button
-                  onClick={() => setDisplayCount(prev => Math.min(prev + 10, funding.length))}
-                  className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-semibold shadow-md transition"
-                >
-                  Load More ({funding.length - displayCount} remaining)
-                </button>
-              </div>
-            )}
-
-            {/* Show All Button */}
-            {displayCount < funding.length && displayCount + 10 < funding.length && (
-              <div className="text-center">
-                <button
-                  onClick={() => setDisplayCount(funding.length)}
-                  className="px-6 py-2 text-primary-600 hover:bg-primary-50 rounded-lg font-medium transition"
-                >
-                  Show All {funding.length} Programs
-                </button>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </motion.div>
         )}
       </div>
     </div>

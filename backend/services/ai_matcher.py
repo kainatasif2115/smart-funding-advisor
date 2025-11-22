@@ -184,11 +184,11 @@ class AIMatcherService:
             f"Name: {p['name']}\n"
             f"Provider: {p['provider']}\n"
             f"Description: {p['description']}\n"
-            f"Eligibility: {p['eligibility']}\n"
-            f"Focus Areas: {', '.join(p['focus_areas'])}\n"
-            f"Deadline: {p['deadline']}\n"
-            f"Funding Amount: {p['funding_amount']}\n"
-            f"URL: {p['url']}"
+            f"Eligibility: {json.dumps(p.get('eligibility', {}))}\n"
+            f"Focus Areas: {', '.join(p.get('focus_areas', []))}\n"
+            f"Deadline: {p.get('deadline', 'N/A')}\n"
+            f"Funding Details: {json.dumps(p.get('funding_details', {}))}\n"
+            f"URL: {p.get('url', 'N/A')}"
             for i, p in enumerate(funding_programs)
         ])
         
