@@ -46,12 +46,20 @@ export const companiesApi = {
     const response = await api.post('/companies', companyData);
     return response.data;
   },
+  update: async (id: number, companyData: any) => {
+    const response = await api.put(`/companies/${id}`, companyData);
+    return response.data;
+  },
   delete: async (id: number) => {
     const response = await api.delete(`/companies/${id}`);
     return response.data;
   },
   searchByName: async (name: string) => {
     const response = await api.post('/companies/search-name', { name });
+    return response.data;
+  },
+  previewByBusinessId: async (businessId: string) => {
+    const response = await api.post('/companies/preview-by-id', { business_id: businessId });
     return response.data;
   },
   fetchByBusinessId: async (businessId: string) => {
