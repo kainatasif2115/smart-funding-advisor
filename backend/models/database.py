@@ -35,11 +35,18 @@ class Company(db.Model):
     business_id = db.Column(db.String(20))  # Y-tunnus
     name = db.Column(db.String(255), nullable=False)
     industry = db.Column(db.String(255))
-    size = db.Column(db.String(50))
+    size = db.Column(db.String(50))  # Revenue size
+    company_size = db.Column(db.String(50))  # Company size (small, medium, large)
     revenue = db.Column(db.String(50))
     employees = db.Column(db.Integer)
     growth_stage = db.Column(db.String(50))
     description = db.Column(db.Text)
+    country = db.Column(db.String(100))
+    city = db.Column(db.String(100))
+    website = db.Column(db.String(255))
+    funding_purpose = db.Column(db.Text)  # What they need funding for
+    funding_amount = db.Column(db.String(100))  # Estimated funding need
+    keywords = db.Column(db.JSON)  # Array of keywords/tags
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     
     funding_matches = db.relationship('FundingMatchCache', backref='company', lazy=True, cascade='all, delete-orphan')
@@ -52,10 +59,17 @@ class Company(db.Model):
             'name': self.name,
             'industry': self.industry,
             'size': self.size,
+            'company_size': self.company_size,
             'revenue': self.revenue,
             'employees': self.employees,
             'growth_stage': self.growth_stage,
             'description': self.description,
+            'country': self.country,
+            'city': self.city,
+            'website': self.website,
+            'funding_purpose': self.funding_purpose,
+            'funding_amount': self.funding_amount,
+            'keywords': self.keywords or [],
             'created_at': self.created_at.isoformat()
         }
 

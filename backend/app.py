@@ -1,7 +1,13 @@
+# IMPORTANT: Remove proxy settings first before any other imports
+# Groq SDK does not support proxy configuration
+import os
+for proxy_var in ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 'NO_PROXY', 'no_proxy']:
+    if proxy_var in os.environ:
+        del os.environ[proxy_var]
+
 from flask import Flask, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
-import os
 
 # Load environment variables
 load_dotenv()

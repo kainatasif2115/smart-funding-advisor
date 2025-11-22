@@ -38,17 +38,23 @@ def add_company(user_id):
     try:
         data = request.get_json()
         
-        # Create company
+        # Create company with all fields
         company = Company(
             user_id=user_id,
             business_id=data.get('business_id'),
             name=data.get('name'),
             industry=data.get('industry'),
             size=data.get('size'),
+            company_size=data.get('company_size'),
             revenue=data.get('revenue'),
             employees=data.get('employees'),
             growth_stage=data.get('growth_stage'),
-            description=data.get('description')
+            description=data.get('description'),
+            country=data.get('country', 'Finland'),
+            city=data.get('city'),
+            funding_purpose=data.get('funding_purpose'),
+            funding_amount=data.get('funding_amount'),
+            keywords=data.get('keywords', [])
         )
         
         db.session.add(company)
@@ -58,6 +64,54 @@ def add_company(user_id):
             'message': 'Company added successfully',
             'company': company.to_dict()
         }), 201
+        
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': str(e)}), 500
+
+@companies_bp.route('/<int:company_id>', methods=['PUT'])
+@token_required
+def update_company(user_id, company_id):
+    """Update a company"""
+    try:
+        company = Company.query.filter_by(id=company_id, user_id=user_id).first()
+        if not company:
+            return jsonify({'error': 'Company not found'}), 404
+        
+        data = request.get_json()
+        
+        # Update all fields
+        if 'name' in data:
+            company.name = data['name']
+        if 'business_id' in data:
+            company.business_id = data['business_id']
+        if 'description' in data:
+            company.description = data['description']
+        if 'industry' in data:
+            company.industry = data['industry']
+        if 'company_size' in data:
+            company.company_size = data['company_size']
+        if 'growth_stage' in data:
+            company.growth_stage = data['growth_stage']
+        if 'employees' in data:
+            company.employees = data['employees']
+        if 'city' in data:
+            company.city = data['city']
+        if 'country' in data:
+            company.country = data['country']
+        if 'funding_purpose' in data:
+            company.funding_purpose = data['funding_purpose']
+        if 'funding_amount' in data:
+            company.funding_amount = data['funding_amount']
+        if 'keywords' in data:
+            company.keywords = data['keywords']
+        
+        db.session.commit()
+        
+        return jsonify({
+            'message': 'Company updated successfully',
+            'company': company.to_dict()
+        }), 200
         
     except Exception as e:
         db.session.rollback()
@@ -102,6 +156,34 @@ def search_by_name(user_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@companies_bp.route('/preview-by-id', methods=['POST'])
+@token_required
+def preview_by_business_id(user_id):
+    """Preview company data by Business ID without saving to database"""
+    try:
+        data = request.get_json()
+        business_id = data.get('business_id')
+        
+        if not business_id:
+            return jsonify({'error': 'Business ID is required'}), 400
+        
+        # Fetch from YTJ
+        ytj_data = YTJService.search_by_business_id(business_id)
+        
+        if not ytj_data:
+            return jsonify({'error': 'Company not found in Finnish Business Registry'}), 404
+        
+        # Generate AI-enriched company data
+        ai_service = AIMatcherService()
+        enriched_data = ai_service.generate_full_company_profile(ytj_data)
+        
+        return jsonify({
+            'company': enriched_data
+        }), 200
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @companies_bp.route('/fetch-by-id', methods=['POST'])
 @token_required
 def fetch_by_business_id(user_id):
@@ -119,9 +201,9 @@ def fetch_by_business_id(user_id):
         if not ytj_data:
             return jsonify({'error': 'Company not found in Finnish Business Registry'}), 404
         
-        # Generate AI summary
+        # Generate FULL AI profile with ALL fields
         ai_service = AIMatcherService()
-        summary = ai_service.generate_company_summary(ytj_data)
+        ai_profile = ai_service.generate_full_company_profile(ytj_data)
         
         # Check if company already exists for this user
         existing = Company.query.filter_by(
@@ -130,31 +212,45 @@ def fetch_by_business_id(user_id):
         ).first()
         
         if existing:
-            # Update existing company
-            existing.name = ytj_data['name']
-            existing.industry = ytj_data.get('industry', '')
-            existing.description = summary
+            # Update existing company with ALL fields
+            existing.name = ai_profile.get('name')
+            existing.industry = ai_profile.get('industry')
+            existing.description = ai_profile.get('description')
+            existing.company_size = ai_profile.get('company_size')
+            existing.growth_stage = ai_profile.get('growth_stage')
+            existing.employees = ai_profile.get('employees')
+            existing.city = ai_profile.get('city')
+            existing.country = ai_profile.get('country', 'Finland')
+            existing.website = ai_profile.get('website')
+            existing.funding_purpose = ai_profile.get('funding_purpose')
+            existing.funding_amount = ai_profile.get('funding_amount')
+            existing.keywords = ai_profile.get('keywords', [])
             company = existing
         else:
-            # Create new company
+            # Create new company with ALL fields
             company = Company(
                 user_id=user_id,
-                business_id=ytj_data['business_id'],
-                name=ytj_data['name'],
-                industry=ytj_data.get('industry', ''),
-                company_form=ytj_data.get('company_form', ''),
-                description=summary
+                business_id=ai_profile.get('business_id'),
+                name=ai_profile.get('name'),
+                industry=ai_profile.get('industry'),
+                description=ai_profile.get('description'),
+                company_size=ai_profile.get('company_size'),
+                growth_stage=ai_profile.get('growth_stage'),
+                employees=ai_profile.get('employees'),
+                city=ai_profile.get('city'),
+                country=ai_profile.get('country', 'Finland'),
+                website=ai_profile.get('website'),
+                funding_purpose=ai_profile.get('funding_purpose'),
+                funding_amount=ai_profile.get('funding_amount'),
+                keywords=ai_profile.get('keywords', [])
             )
             db.session.add(company)
         
         db.session.commit()
         
-        result = company.to_dict()
-        result['ai_summary'] = summary
-        
         return jsonify({
             'message': 'Company data fetched successfully',
-            'company': result
+            'company': company.to_dict()
         }), 200
         
     except Exception as e:
@@ -179,9 +275,9 @@ def fetch_by_selection(user_id):
             if not ytj_data:
                 return jsonify({'error': 'Company not found'}), 404
         
-        # Generate AI summary
+        # Generate FULL AI profile with ALL fields
         ai_service = AIMatcherService()
-        summary = ai_service.generate_company_summary(ytj_data)
+        ai_profile = ai_service.generate_full_company_profile(ytj_data)
         
         # Check if company already exists
         existing = Company.query.filter_by(
@@ -190,28 +286,45 @@ def fetch_by_selection(user_id):
         ).first()
         
         if existing:
-            existing.name = ytj_data['name']
-            existing.industry = ytj_data.get('industry', '')
-            existing.description = summary
+            # Update with ALL fields
+            existing.name = ai_profile.get('name')
+            existing.industry = ai_profile.get('industry')
+            existing.description = ai_profile.get('description')
+            existing.company_size = ai_profile.get('company_size')
+            existing.growth_stage = ai_profile.get('growth_stage')
+            existing.employees = ai_profile.get('employees')
+            existing.city = ai_profile.get('city')
+            existing.country = ai_profile.get('country', 'Finland')
+            existing.website = ai_profile.get('website')
+            existing.funding_purpose = ai_profile.get('funding_purpose')
+            existing.funding_amount = ai_profile.get('funding_amount')
+            existing.keywords = ai_profile.get('keywords', [])
             company = existing
         else:
+            # Create with ALL fields
             company = Company(
                 user_id=user_id,
-                business_id=business_id,
-                name=ytj_data['name'],
-                industry=ytj_data.get('industry', ''),
-                description=summary
+                business_id=ai_profile.get('business_id'),
+                name=ai_profile.get('name'),
+                industry=ai_profile.get('industry'),
+                description=ai_profile.get('description'),
+                company_size=ai_profile.get('company_size'),
+                growth_stage=ai_profile.get('growth_stage'),
+                employees=ai_profile.get('employees'),
+                city=ai_profile.get('city'),
+                country=ai_profile.get('country', 'Finland'),
+                website=ai_profile.get('website'),
+                funding_purpose=ai_profile.get('funding_purpose'),
+                funding_amount=ai_profile.get('funding_amount'),
+                keywords=ai_profile.get('keywords', [])
             )
             db.session.add(company)
         
         db.session.commit()
         
-        result = company.to_dict()
-        result['ai_summary'] = summary
-        
         return jsonify({
             'message': 'Company added successfully',
-            'company': result
+            'company': company.to_dict()
         }), 200
         
     except Exception as e:

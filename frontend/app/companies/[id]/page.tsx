@@ -74,57 +74,152 @@ export default function CompanyDetailsPage() {
       <Navbar />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Company Header Card */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
-          <div className="flex items-start justify-between mb-4">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{company?.name}</h1>
-              <div className="flex flex-wrap gap-3">
-                {company?.business_id && (
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+        {/* Company Summary Tile */}
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
+          <div className="flex items-start justify-between mb-6">
+            <div className="flex-1">
+              {/* Company Name & Business ID */}
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">{company?.name}</h1>
+              {company?.business_id && (
+                <p className="text-lg text-gray-500 font-medium mb-4">
+                  Y-tunnus: {company.business_id}
+                </p>
+              )}
+              
+              {/* Company Description */}
+              {company?.description && (
+                <p className="text-gray-700 text-base leading-relaxed mb-5 max-w-3xl">
+                  {company.description}
+                </p>
+              )}
+              
+              {/* Stage and Size Badges */}
+              <div className="flex gap-3 mb-5">
+                {company?.growth_stage && (
+                  <span className="inline-flex items-center px-4 py-2 rounded-lg bg-purple-100 text-purple-700 text-sm font-semibold">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
-                    {company.business_id}
+                    {company.growth_stage}
                   </span>
                 )}
-                {company?.industry && (
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                {company?.company_size && (
+                  <span className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-100 text-blue-700 text-sm font-semibold">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
-                    {company.industry}
-                  </span>
-                )}
-                {company?.employees && (
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    {company.employees} employees
+                    {company.company_size}
                   </span>
                 )}
               </div>
+              
+              {/* Info Row */}
+              <div className="flex flex-wrap gap-6 mb-6 text-sm text-gray-600">
+                {company?.industry && (
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span><strong>Sector:</strong> {company.industry}</span>
+                  </div>
+                )}
+                {(company?.country || company?.city) && (
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>
+                      <strong>Location:</strong> {company.country || 'Finland'}
+                      {company.city && `, ${company.city}`}
+                    </span>
+                  </div>
+                )}
+                {company?.employees && (
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span><strong>Employees:</strong> ~{company.employees}</span>
+                  </div>
+                )}
+                {company?.revenue && (
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>Revenue:</strong> {company.revenue}</span>
+                  </div>
+                )}
+                {company?.website && (
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                    <a href={company.website.startsWith('http') ? company.website : `https://${company.website}`} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 hover:underline font-medium">
+                      Visit Website →
+                    </a>
+                  </div>
+                )}
+              </div>
+              
+              {/* Funding Need Section */}
+              {(company?.funding_purpose || company?.funding_amount) && (
+                <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-lg p-5 mb-5 border border-primary-100">
+                  <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Funding Need
+                  </h3>
+                  {company?.funding_purpose && (
+                    <p className="text-gray-700 mb-3 leading-relaxed">
+                      {company.funding_purpose}
+                    </p>
+                  )}
+                  {company?.funding_amount && (
+                    <p className="text-gray-900 font-semibold">
+                      Estimated need: {company.funding_amount}
+                    </p>
+                  )}
+                </div>
+              )}
+              
+              {/* Keyword Tags */}
+              {company?.keywords && company.keywords.length > 0 && (
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    {company.keywords.map((keyword: string, idx: number) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-            <button
-              onClick={() => router.push('/dashboard')}
-              className="px-4 py-2 text-gray-600 hover:text-gray-900"
-            >
-              ← Back to Dashboard
-            </button>
-          </div>
-
-          {company?.description && (
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            
+            <div className="flex gap-2">
+              <button
+                onClick={() => router.push(`/companies/${params.id}/edit`)}
+                className="px-4 py-2 text-primary-600 hover:bg-primary-50 border border-primary-600 rounded-lg transition flex items-center"
+              >
+                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
-                AI-Generated Company Summary
-              </h3>
-              <p className="text-gray-700 leading-relaxed">{company.description}</p>
+                Edit
+              </button>
+              <button
+                onClick={() => router.push('/dashboard')}
+                className="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition flex-shrink-0"
+              >
+                ← Back
+              </button>
             </div>
-          )}
+          </div>
         </div>
 
         {/* Fetch Funding Button */}
