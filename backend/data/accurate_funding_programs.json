@@ -43,7 +43,7 @@
       "id": 2,
       "name": "Start-up Grant (Starttiraha)",
       "provider": "ELY Centre", 
-      "url": "https://www.ely-keskus.fi/starttiraha",
+      "url": "https://www.ely-keskus.fi/yritysrahoitus",
       "description": "Basic income for new entrepreneurs starting full-time business.",
       "eligibility": {
         "company_type": "New entrepreneur",
@@ -93,7 +93,7 @@
       "id": 4,
       "name": "Finnvera Start Loan (Starttilaina)",
       "provider": "Finnvera",
-      "url": "https://www.finnvera.fi/en/loans/start-loan",
+      "url": "https://www.finnvera.fi/eng/financing/loans/finnvera-loan",
       "description": "Unsecured loan for startups and new entrepreneurs.",
       "eligibility": {
         "company_type": "New or young company",
@@ -117,7 +117,7 @@
       "id": 5,
       "name": "Finnvera Working Capital Loan",
       "provider": "Finnvera",
-      "url": "https://www.finnvera.fi/en/loans/working-capital-loan",
+      "url": "https://www.finnvera.fi/eng/financing/loans/finnvera-loan",
       "description": "Financing for daily operations and working capital.",
       "eligibility": {
         "company_type": "SME and Midcap",
@@ -141,7 +141,7 @@
       "id": 6,
       "name": "Finnvera Investment Loan",
       "provider": "Finnvera",
-      "url": "https://www.finnvera.fi/en/loans/investment-loan",
+      "url": "https://www.finnvera.fi/eng/financing/loans/finnvera-loan",
       "description": "Long-term financing for investments.",
       "eligibility": {
         "company_type": "SME and Midcap",
@@ -165,7 +165,7 @@
       "id": 7,
       "name": "Finnvera Export Credit Guarantee",
       "provider": "Finnvera",
-      "url": "https://www.finnvera.fi/en/guarantees-and-other-services/export-credit-guarantees",
+      "url": "https://www.finnvera.fi/eng/export-and-internationalisation",
       "description": "Protection against commercial and political risks in exports.",
       "eligibility": {
         "company_type": "All sizes",
@@ -263,7 +263,7 @@
       "id": 11,
       "name": "Innovative Public Procurement",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/research-and-development-funding/innovative-public-procurement",
+      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/research-and-development-funding",
       "description": "Funding for innovative procurement projects between public sector and companies.",
       "eligibility": {
         "company_type": "Public sector organization + company partnership",
@@ -647,7 +647,7 @@
       "id": 27,
       "name": "Business Subsidies (Yritystuki)",
       "provider": "Ministry of Economic Affairs and Employment",
-      "url": "https://tem.fi/en/yritysrahoitus",
+      "url": "https://tem.fi/frontpage",
       "description": "Various business development subsidies administered through ELY Centres.",
       "eligibility": {
         "company_type": "SME",
@@ -669,7 +669,7 @@
       "id": 28,
       "name": "Rural Development Funding",
       "provider": "Ministry of Agriculture and Forestry",
-      "url": "https://mmm.fi/en/funding",
+      "url": "https://mmm.fi/en/forests/forestry/public-funding",
       "description": "Support for rural businesses and bioeconomy.",
       "eligibility": {
         "company_type": "Rural businesses, agriculture, forestry",
@@ -722,7 +722,7 @@
       "id": 30,
       "name": "Horizon Europe - Pillar 3: Innovative Europe (EIC)",
       "provider": "European Innovation Council (EIC)",
-      "url": "https://eic.ec.europa.eu/index_en",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/horizon",
       "description": "Support for breakthrough innovation - Pathfinder, Transition, Accelerator.",
       "eligibility": {
         "company_type": "SMEs, startups, individuals",
@@ -1002,7 +1002,7 @@
       "id": 43,
       "name": "Nordic Innovation - Digital Transformation",
       "provider": "Nordic Innovation",
-      "url": "https://www.nordicinnovation.org/funding",
+      "url": "https://www.nordicinnovation.org",
       "description": "Support for Nordic digital innovation collaboration.",
       "eligibility": {
         "company_type": "Nordic companies",
