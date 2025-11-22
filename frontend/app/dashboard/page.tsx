@@ -9,6 +9,8 @@ import { companiesApi } from '@/lib/api'
 export default function DashboardPage() {
   const router = useRouter()
   const [companies, setCompanies] = useState<any[]>([])
+  const [totalCount, setTotalCount] = useState(0)
+  const [analyzedCount, setAnalyzedCount] = useState(0)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -29,7 +31,17 @@ export default function DashboardPage() {
     try {
       setLoading(true)
       const response = await companiesApi.getAll()
-      setCompanies(response.companies || [])
+      const allCompanies = response.companies || []
+      // Store total count
+      setTotalCount(allCompanies.length)
+      // Count companies with all key fields filled (considered "analyzed")
+      const analyzed = allCompanies.filter((c: any) => 
+        c.description && c.growth_stage && c.company_size && c.funding_purpose
+      ).length
+      setAnalyzedCount(analyzed)
+      // Show only 5 most recent companies on dashboard
+      const recentCompanies = allCompanies.slice(0, 5)
+      setCompanies(recentCompanies)
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to load companies')
     } finally {
@@ -65,7 +77,7 @@ export default function DashboardPage() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Total Companies</p>
-                <p className="text-3xl font-bold text-gray-900">{companies.length}</p>
+                <p className="text-3xl font-bold text-gray-900">{totalCount}</p>
               </div>
               <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,12 +90,17 @@ export default function DashboardPage() {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600 mb-1">Analyses Today</p>
-                <p className="text-3xl font-bold text-gray-900">0</p>
+                <p className="text-sm text-gray-600 mb-1">Browse & Filter</p>
+                <Link
+                  href="/companies/search"
+                  className="inline-block mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium text-sm"
+                >
+                  Search Companies
+                </Link>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
@@ -111,8 +128,17 @@ export default function DashboardPage() {
 
         {/* Companies List */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200">
-          <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Your Companies</h2>
+          <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+            <h2 className="text-xl font-semibold text-gray-900">Recent Companies</h2>
+            <Link
+              href="/companies/search"
+              className="text-sm font-medium text-primary-600 hover:text-primary-700 flex items-center"
+            >
+              View All Companies
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
 
           {loading ? (

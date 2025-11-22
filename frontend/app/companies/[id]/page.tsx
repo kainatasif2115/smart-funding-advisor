@@ -13,6 +13,7 @@ export default function CompanyDetailsPage() {
   const [loading, setLoading] = useState(true)
   const [fetchingFunding, setFetchingFunding] = useState(false)
   const [error, setError] = useState('')
+  const [displayCount, setDisplayCount] = useState(10)
 
   useEffect(() => {
     loadCompanyData()
@@ -249,7 +250,7 @@ export default function CompanyDetailsPage() {
             <div className="space-y-2 max-w-md mx-auto text-gray-600">
               <p className="flex items-center justify-center">
                 <span className="animate-pulse">⚡</span>
-                <span className="ml-2">Scanning 8+ funding sources</span>
+                <span className="ml-2">Analyzing funding programs</span>
               </p>
               <p className="flex items-center justify-center">
                 <span className="animate-pulse">🤖</span>
@@ -276,7 +277,7 @@ export default function CompanyDetailsPage() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-gray-900">
-                Funding Recommendations ({funding.length})
+                Top {Math.min(displayCount, funding.length)} of {funding.length} Funding Recommendations
               </h2>
               <button
                 onClick={handleFetchFunding}
@@ -286,7 +287,7 @@ export default function CompanyDetailsPage() {
               </button>
             </div>
 
-            {funding.map((program, index) => (
+            {funding.slice(0, displayCount).map((program, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition"
@@ -394,6 +395,30 @@ export default function CompanyDetailsPage() {
                 </div>
               </div>
             ))}
+
+            {/* Load More Button */}
+            {displayCount < funding.length && (
+              <div className="text-center pt-6">
+                <button
+                  onClick={() => setDisplayCount(prev => Math.min(prev + 10, funding.length))}
+                  className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-semibold shadow-md transition"
+                >
+                  Load More ({funding.length - displayCount} remaining)
+                </button>
+              </div>
+            )}
+
+            {/* Show All Button */}
+            {displayCount < funding.length && displayCount + 10 < funding.length && (
+              <div className="text-center">
+                <button
+                  onClick={() => setDisplayCount(funding.length)}
+                  className="px-6 py-2 text-primary-600 hover:bg-primary-50 rounded-lg font-medium transition"
+                >
+                  Show All {funding.length} Programs
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

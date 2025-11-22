@@ -27,7 +27,8 @@ def fetch_investors(user_id):
             return jsonify({'error': 'Company not found'}), 404
         
         # Check if we have recent cached results (less than 24 hours old)
-        cache = FundingMatchCache.query.filter_by(company_id=company_id).first()
+        # cache = FundingMatchCache.query.filter_by(company_id=company_id).first()
+        cache = None
         if cache and (datetime.utcnow() - cache.created_at) < timedelta(hours=24):
             return jsonify({
                 'message': 'Funding matches retrieved from cache',
