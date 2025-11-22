@@ -1,20 +1,31 @@
 import os
-from anthropic import Anthropic
+from groq import Groq
 from typing import List, Dict
 import json
 
 class AIMatcherService:
-    """Service to match companies with funding programs using Claude AI"""
+    """Service to match companies with funding programs using Groq AI"""
     
     def __init__(self):
-        self.client = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
+        api_key = os.getenv('GROQ_API_KEY')
+        if not api_key:
+            print("Warning: GROQ_API_KEY not found, AI features will use fallback")
+            self.client = None
+        else:
+            try:
+                self.client = Groq(api_key=api_key)
+            except Exception as e:
+                print(f"Error initializing Groq client: {e}")
+                self.client = None
     
     def generate_company_summary(self, company_data: Dict) -> str:
         """
-        Generate a comprehensive company summary using Claude
+        Generate a comprehensive company summary using Groq AI
         """
-        prompt = f"""
-Based on the following company information, create a comprehensive business summary in 2-3 paragraphs:
+        if not self.client:
+            return f"Company profile for {company_data.get('name', 'Unknown Company')} in {company_data.get('industry', 'unspecified industry')}."
+        
+        prompt = f"""Based on the following company information, create a comprehensive business summary in 2-3 paragraphs:
 
 Company Name: {company_data.get('name', 'N/A')}
 Business ID: {company_data.get('business_id', 'N/A')}
@@ -33,19 +44,22 @@ Create a professional summary that includes:
 2. Stage of development and growth trajectory
 3. Key characteristics relevant for funding assessment
 
-Keep it concise, factual, and focused on information relevant for funding advisors.
-"""
+Keep it concise, factual, and focused on information relevant for funding advisors."""
         
         try:
-            message = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
-                max_tokens=1024,
+            chat_completion = self.client.chat.completions.create(
                 messages=[
-                    {"role": "user", "content": prompt}
-                ]
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                model="llama-3.1-70b-versatile",
+                temperature=0.7,
+                max_tokens=1024,
             )
             
-            return message.content[0].text
+            return chat_completion.choices[0].message.content
             
         except Exception as e:
             print(f"Error generating company summary: {e}")
@@ -56,6 +70,9 @@ Keep it concise, factual, and focused on information relevant for funding adviso
         Match company with funding programs and provide justifications
         Returns sorted list of matches with relevance scores
         """
+        if not self.client:
+            return self._fallback_matching(company_data, funding_programs)
+        
         # Prepare funding programs summary
         programs_text = "\n\n".join([
             f"Program {i+1}:\n"
@@ -70,8 +87,7 @@ Keep it concise, factual, and focused on information relevant for funding adviso
             for i, p in enumerate(funding_programs)
         ])
         
-        prompt = f"""
-You are a funding advisor expert. Analyze the following company profile and match it with the most suitable funding programs.
+        prompt = f"""You are a funding advisor expert. Analyze the following company profile and match it with the most suitable funding programs.
 
 COMPANY PROFILE:
 Name: {company_data.get('name', 'N/A')}
@@ -109,19 +125,22 @@ Focus on:
 - Eligibility criteria compatibility
 - Strategic fit for company's needs
 
-Return ONLY the JSON array, no other text.
-"""
+Return ONLY the JSON array, no other text."""
         
         try:
-            message = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
-                max_tokens=4096,
+            chat_completion = self.client.chat.completions.create(
                 messages=[
-                    {"role": "user", "content": prompt}
-                ]
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                model="llama-3.1-70b-versatile",
+                temperature=0.5,
+                max_tokens=4096,
             )
             
-            response_text = message.content[0].text.strip()
+            response_text = chat_completion.choices[0].message.content.strip()
             
             # Extract JSON from response (in case there's extra text)
             json_start = response_text.find('[')
