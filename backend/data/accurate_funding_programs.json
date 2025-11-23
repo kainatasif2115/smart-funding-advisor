@@ -1,5 +1,5 @@
 {
-  "last_updated": "2024-11-22",
+  "last_updated": "2025-11-22",
   "total_programs": 44,
   "sources": [
     "ELY Centre - Business Funding",
@@ -16,7 +16,7 @@
       "id": 1,
       "name": "Development Grant (Kehittämisavustus)",
       "provider": "ELY Centre",
-      "url": "https://www.ely-keskus.fi/yritysrahoitus",
+      "url": "https://www.ely-keskus.fi/yrityksen-kehittamisavustus",
       "description": "Support for business development projects to develop products, services, processes, or business models.",
       "eligibility": {
         "company_type": "SME (Small and Medium Enterprises)",
@@ -30,20 +30,26 @@
         ]
       },
       "funding_details": {
-        "type": "Grant (de minimis aid)",
-        "percentage": "Up to 50% of eligible costs",
-        "max_amount": "EUR 100,000 per 3-year period (de minimis)",
-        "min_project_cost": "Typically EUR 5,000"
+        "type": "Grant (usually de minimis state aid)",
+        "percentage": "Up to 50% of development costs (up to 60% for lump-sum projects; investments typically 10-40% depending on region and company size)",
+        "max_amount": "Subject to state-aid and call-specific limits (grants can range from around EUR 10,000 up to several million euros per project)",
+        "min_project_cost": "Minimum grant typically around EUR 10,000 (project must be larger than this)"
       },
-      "focus_areas": ["Business Development", "Product Development", "Digitalization", "Internationalization", "Process Development"],
+      "focus_areas": [
+        "Business Development",
+        "Product Development",
+        "Digitalization",
+        "Internationalization",
+        "Process Development"
+      ],
       "deadline": "Continuous application",
       "application_process": "Apply through ELY Centre online service"
     },
     {
       "id": 2,
       "name": "Start-up Grant (Starttiraha)",
-      "provider": "ELY Centre", 
-      "url": "https://www.ely-keskus.fi/yritysrahoitus",
+      "provider": "ELY Centre",
+      "url": "https://www.ely-keskus.fi/yrityksen-perustaminen",
       "description": "Basic income for new entrepreneurs starting full-time business.",
       "eligibility": {
         "company_type": "New entrepreneur",
@@ -52,25 +58,29 @@
           "Full-time entrepreneur (min 4 days/week)",
           "Sufficient skills and competence",
           "Viable business plan",
-          "Not receiving unemployment benefits"
+          "Cannot receive overlapping unemployment benefit for the same period"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "amount": "EUR 800-1,400 per month",
+        "amount": "Approximately EUR 740 per month (37.21 €/day in 2025, paid for up to 5 days per week; amount is indexed and may change annually)",
         "duration": "Up to 12 months (typically 6-12 months)",
         "taxable": "Yes, taxable income"
       },
-      "focus_areas": ["Entrepreneurship", "Start-up", "New Business"],
+      "focus_areas": [
+        "Entrepreneurship",
+        "Start-up",
+        "New Business"
+      ],
       "deadline": "Continuous application",
       "application_process": "Apply before starting business through ELY Centre"
     },
     {
       "id": 3,
       "name": "Business Loan Guarantee",
-      "provider": "ELY Centre",
-      "url": "https://www.ely-keskus.fi/yritysrahoitus",
-      "description": "State guarantee for business loans to reduce collateral requirements.",
+      "provider": "Finnvera",
+      "url": "https://www.finnvera.fi/eng/financing/guarantees/finnvera-guarantee",
+      "description": "State-backed guarantee from Finnvera for business loans to reduce collateral requirements.",
       "eligibility": {
         "company_type": "SME",
         "company_size": "Max 250 employees",
@@ -82,105 +92,130 @@
       },
       "funding_details": {
         "type": "Guarantee",
-        "coverage": "Up to 80% of loan",
-        "max_guarantee": "EUR 1 million",
-        "fee": "Annual guarantee fee applies"
+        "coverage": "Usually 50-80% of the loan amount",
+        "max_guarantee": "Varies by guarantee product (e.g. SME Guarantee up to around EUR 300,000 in total exposure; larger guarantees case-by-case)",
+        "fee": "Risk-based guarantee fee (and possible service fee) charged to the company"
       },
-      "focus_areas": ["Investment", "Working Capital", "Growth"],
+      "focus_areas": [
+        "Investment",
+        "Working Capital",
+        "Growth"
+      ],
       "deadline": "Continuous application"
     },
     {
       "id": 4,
-      "name": "Finnvera Start Loan (Starttilaina)",
+      "name": "Entrepreneur Loan (Yrittäjälaina)",
       "provider": "Finnvera",
-      "url": "https://www.finnvera.fi/eng/financing/loans/finnvera-loan",
-      "description": "Unsecured loan for startups and new entrepreneurs.",
+      "url": "https://www.finnvera.fi/eng/financing/loans/entrepreneur-loan",
+      "description": "Personal loan for a company’s shareholder or business successor to finance ownership arrangements, such as acquiring shares or investing in the company’s share capital.",
       "eligibility": {
-        "company_type": "New or young company",
-        "company_age": "Under 5 years of operations",
+        "company_type": "Shareholder or successor in a limited liability company (SME)",
+        "company_age": "Start-up or established company; target company must have prerequisites for profitable business",
         "requirements": [
-          "Viable business idea",
-          "Entrepreneur capability",
-          "First-time entrepreneur or new business area"
+          "Borrower holds at least 5% of the share capital and votes after the investment or share transaction financed with the loan",
+          "Borrower works in the company or serves as a Board member",
+          "Borrower’s personal finances are in good order",
+          "Target company has prerequisites for profitable business",
+          "Loan is used for ownership arrangements (not for working capital, equity boosting of a company in difficulty, or large corporate incentive programmes)"
         ]
       },
       "funding_details": {
-        "type": "Loan (unsecured)",
-        "amount": "Up to EUR 100,000",
-        "interest_rate": "Finnvera's reference rate + margin",
-        "repayment": "Up to 10 years"
+        "type": "Loan (personal, mainly unsecured)",
+        "amount": "Minimum EUR 20,000; final loan amount decided case-by-case according to financing need and borrower’s repayment ability",
+        "interest_rate": "Six-month Euribor + fixed margin of 3.75% p.a. (plus management fee; pricing may change over time)",
+        "repayment": "Loan period typically 5–6 years, maximum 12 years (grace period possible case-by-case)"
       },
-      "focus_areas": ["Start-up", "New Business", "Entrepreneurship"],
+      "focus_areas": [
+        "Ownership arrangements",
+        "Business acquisition",
+        "Generation change",
+        "Entrepreneurship"
+      ],
       "deadline": "Continuous application"
-    },
+    },    
     {
       "id": 5,
       "name": "Finnvera Working Capital Loan",
       "provider": "Finnvera",
       "url": "https://www.finnvera.fi/eng/financing/loans/finnvera-loan",
-      "description": "Financing for daily operations and working capital.",
+      "description": "Finnvera Loan used to finance working capital needs as part of an overall financing package for SMEs.",
       "eligibility": {
-        "company_type": "SME and Midcap",
-        "company_size": "Up to 499 employees",
+        "company_type": "SME (and, on special grounds, larger companies)",
+        "company_size": "Typically fewer than 250 employees; turnover max EUR 50 million or balance-sheet total max EUR 43 million",
         "requirements": [
-          "Established operations",
-          "Viable business",
-          "Working capital need"
+          "Start-up or established company with prerequisites for profitable business",
+          "Working capital and/or investment financing need in Finland",
+          "Overall financing package planned together with a bank or other financiers"
         ]
       },
       "funding_details": {
         "type": "Loan",
-        "amount": "Typically EUR 50,000 - 2,000,000",
-        "duration": "Up to 10 years",
-        "collateral": "Required"
+        "amount": "Minimum EUR 50,000; upper limit decided case-by-case as part of the overall financing package",
+        "duration": "Generally 3–15 years depending on the nature and size of the project",
+        "collateral": "Security negotiated case-by-case (often bank and/or other collateral required)"
       },
-      "focus_areas": ["Working Capital", "Operations", "Growth"],
+      "focus_areas": [
+        "Working Capital",
+        "Operations",
+        "Growth"
+      ],
       "deadline": "Continuous application"
-    },
+    },    
     {
       "id": 6,
       "name": "Finnvera Investment Loan",
       "provider": "Finnvera",
       "url": "https://www.finnvera.fi/eng/financing/loans/finnvera-loan",
-      "description": "Long-term financing for investments.",
+      "description": "Finnvera Loan used as long-term financing for domestic investment projects such as construction, machinery and equipment, and energy and environmental investments.",
       "eligibility": {
-        "company_type": "SME and Midcap",
-        "company_size": "Up to 499 employees",
+        "company_type": "SME (and, on special grounds, companies larger than an SME)",
+        "company_size": "Typically fewer than 250 employees; annual turnover max EUR 50 million or balance sheet total max EUR 43 million",
         "requirements": [
-          "Investment project (machinery, property, etc.)",
-          "Business viability",
-          "Sufficient own financing"
+          "Start-up or established company with prerequisites for profitable business",
+          "Investment project in Finland (e.g. construction, machinery and equipment, energy or environmental projects)",
+          "Overall financing package planned together with a bank or other financiers",
+          "Company operates in a sector Finnvera can finance (e.g. excludes farming, forestry and property development)"
         ]
       },
       "funding_details": {
         "type": "Loan",
-        "amount": "Typically EUR 100,000 - 5,000,000",
-        "duration": "Up to 20 years",
-        "finnvera_share": "Up to 80% of financing need"
+        "amount": "Minimum EUR 50,000; final loan amount decided case-by-case according to project size and repayment ability",
+        "duration": "Generally 3–15 years depending on the character and size of the investment",
+        "finnvera_share": "Loan is typically part of a financing package with a bank; Finnvera’s share of the total financing is agreed case-by-case"
       },
-      "focus_areas": ["Investment", "Expansion", "Machinery", "Property"],
+      "focus_areas": [
+        "Investment",
+        "Expansion",
+        "Machinery",
+        "Property"
+      ],
       "deadline": "Continuous application"
-    },
+    },    
     {
       "id": 7,
       "name": "Finnvera Export Credit Guarantee",
       "provider": "Finnvera",
-      "url": "https://www.finnvera.fi/eng/export-and-internationalisation",
+      "url": "https://www.finnvera.fi/eng/financing-solutions/export-credit-guarantees",
       "description": "Protection against commercial and political risks in exports.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "Exporting companies and banks of all sizes",
         "requirements": [
-          "Export activities",
-          "Finnish content/value-add",
-          "Credit period over 2 years"
+          "Export activities involving Finnish interest (Finnish exporter or significant Finnish content/value-add)",
+          "Credit or payment risk related to a foreign buyer, buyer’s bank or buyer’s country",
+          "Credit period can be short, medium or long term depending on guarantee type (often used for credit periods over 2 years in larger transactions)"
         ]
       },
       "funding_details": {
         "type": "Guarantee",
-        "coverage": "Up to 95% of risks",
-        "fee": "Risk-based premium"
+        "coverage": "Typically up to 90–95% for commercial risks and up to 100% for political risks, depending on guarantee type and transaction",
+        "fee": "Risk-based premium and handling fees determined case-by-case"
       },
-      "focus_areas": ["Export", "Internationalization", "Risk Management"],
+      "focus_areas": [
+        "Export",
+        "Internationalization",
+        "Risk Management"
+      ],
       "deadline": "Continuous application"
     },
     {
@@ -191,23 +226,29 @@
       "description": "Funding for R&D projects to develop new products, services, production methods or business models for international markets.",
       "eligibility": {
         "company_type": "SME or Midcap",
-        "company_size": "SME: Max 250 employees, turnover max EUR 50M, balance sheet max EUR 43M. Midcap: turnover max EUR 300M (group level)",
+        "company_size": "SME: max 250 employees, turnover max EUR 50M or balance sheet max EUR 43M. Midcap: group-level turnover max EUR 300M.",
         "requirements": [
           "Aiming for significant international growth",
-          "Developing innovative products/services/production methods/business models",
-          "Solution gains competitive advantage in international market",
+          "Developing innovative products, services, production methods or business models",
+          "Solution creates competitive advantage in international markets",
           "Creating new expertise for competitive advantage",
-          "Sufficient own financing",
-          "Project not yet started"
+          "Sufficient overall financing for the project",
+          "Project not yet started at the time of application"
         ]
       },
       "funding_details": {
-        "type": "Grant or Loan",
-        "percentage": "Micro & small: 50% grant, 50% loan. Medium: 35% grant, 65% loan. Midcap: 100% loan",
-        "typical_amount": "EUR 100,000 - 5,000,000",
-        "min_project_cost": "Typically EUR 100,000"
+        "type": "Grant and/or Loan",
+        "percentage": "Grant: SME research projects 50% of eligible costs (60% if the project content is entirely industrial research); Midcap research projects 40% (50% if entirely industrial research). Loan for development and piloting typically up to 50% of total project costs and up to 70% in justified cases.",
+        "typical_amount": "Projects often range from hundreds of thousands to several million euros depending on scope.",
+        "min_project_cost": "Project budgets are usually at least around EUR 100,000."
       },
-      "focus_areas": ["R&D", "Product Development", "Innovation", "Technology", "International Growth"],
+      "focus_areas": [
+        "R&D",
+        "Product Development",
+        "Innovation",
+        "Technology",
+        "International Growth"
+      ],
       "deadline": "Continuous application"
     },
     {
@@ -215,25 +256,32 @@
       "name": "Research and Development Funding for Large Companies",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/research-and-development-funding/research-and-development-funding-large-corporation/",
-      "description": "R&D funding for breakthrough innovations by large companies.",
+      "description": "Grants and loans for large companies to conduct research, development and piloting projects that create new expertise, solutions and international competitive advantage.",
       "eligibility": {
         "company_type": "Large company",
-        "company_size": "Over 250 employees OR turnover over EUR 50M OR balance sheet over EUR 43M",
+        "company_size": "Large company: bigger than an SME or midcap (SME: <250 employees and turnover ≤ EUR 50M or balance sheet ≤ EUR 43M; midcap: group-level turnover ≤ EUR 300M). Companies above this are considered large.",
         "requirements": [
-          "Breakthrough innovation project",
-          "Targeting international markets",
-          "High-risk R&D",
-          "Must spend min 40% on SME/research org services (or 15% in special cases)",
-          "Sufficient own financing"
+          "Genuine aim for significant international growth",
+          "Developing new innovative products or services, production methods or business models that will gain a competitive advantage in international markets",
+          "Creating new expertise and networks that provide a significant competitive edge",
+          "Sufficient self-financing and overall financial soundness",
+          "For grant-funded research projects, at least 40% of project costs must be used to purchase services from SMEs and/or research organisations",
+          "For loan-funded development and piloting projects, at least 15% of project costs must be used to purchase services from SMEs or research organisations",
+          "Project has not started before the funding decision"
         ]
       },
       "funding_details": {
-        "type": "Loan",
-        "percentage": "100% loan",
-        "typical_amount": "EUR 500,000 - 10,000,000+",
-        "interest": "Finnvera reference rate + margin"
+        "type": "Grant and Loan",
+        "percentage": "Grant for research projects: 40% of eligible project costs (50% if the project content is entirely industrial research). Loan for development and piloting can cover up to 50% of total project costs; up to 30% of the loan may be paid as an advance.",
+        "typical_amount": "Project sizes vary from hundreds of thousands to several million euros; there is no fixed public upper limit and the amount depends on project scope and impact.",
+        "interest": "Loan interest rate is three percentage points lower than the official base rate in force, but at least 1% per year; loans are generally granted without collateral and the loan period is typically 7–10 years with 3–5 instalment-free years."
       },
-      "focus_areas": ["R&D", "Innovation", "Large Enterprises", "Breakthrough Technology"],
+      "focus_areas": [
+        "R&D",
+        "Innovation",
+        "Large Enterprises",
+        "Breakthrough Technology"
+      ],
       "deadline": "Continuous application"
     },
     {
@@ -241,44 +289,63 @@
       "name": "Research and Development Funding for Creative Industries",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/research-and-development-funding/Funding-to-promote-research-and-development-in-the-creative-industries/",
-      "description": "R&D funding specifically for companies in creative industries.",
+      "description": "Earmarked R&D funding for companies whose projects renew the creative industries and support bold international growth.",
       "eligibility": {
-        "company_type": "Creative industry companies",
-        "sectors": ["Media", "Gaming", "Design", "Audiovisual", "Music", "Cultural services"],
+        "company_type": "Companies of any size engaged in economic activity with a strong creative industries link (Business Finland does not fund one-person companies)",
+        "sectors": [
+          "Media",
+          "Gaming",
+          "Design",
+          "Audiovisual",
+          "Music",
+          "Cultural services"
+        ],
         "requirements": [
-          "Creative industry focus",
-          "R&D project",
-          "International market potential"
+          "Project based on creative skills or solutions for the creative industries",
+          "R&D project aiming at bold renewal and international business growth",
+          "Cannot finance core content production (e.g. single game, TV series, film, music album, artwork or clothing collection, or routine work generating normal revenue)",
+          "Sufficient capabilities and team to steer international growth",
+          "Project not yet started at the time of application"
         ]
       },
       "funding_details": {
-        "type": "Grant or Loan",
-        "percentage": "Up to 50% (SME) or lower (larger companies)",
-        "typical_amount": "EUR 50,000 - 2,000,000"
+        "type": "Grant (and in some cases loan, according to Business Finland’s general R&D funding rules)",
+        "percentage": "For small and medium-sized enterprises, development of products, services and business models can be supported with a 35% R&D grant instead of the normal 50% loan; depending on the level of research and company size, support may be higher or lower, or in loan form.",
+        "typical_amount": "Business Finland has earmarked EUR 9 million per year of its funding authorization specifically for R&D in the creative industries from 2025 onwards; individual project funding typically ranges from tens of thousands up to a few million euros depending on scope."
       },
-      "focus_areas": ["Creative Industries", "R&D", "Media", "Gaming", "Design"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Creative Industries",
+        "R&D",
+        "Media",
+        "Gaming",
+        "Design"
+      ],
+      "deadline": "Call-based; specific funding calls for creative industries R&D are opened with announced application periods (not a fully continuous scheme)."
     },
     {
       "id": 11,
       "name": "Innovative Public Procurement",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/research-and-development-funding",
-      "description": "Funding for innovative procurement projects between public sector and companies.",
+      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/research-and-development-funding/innovative-public-procurements",
+      "description": "Funding for public procurement units to carry out innovative procurements that renew public services and operations.",
       "eligibility": {
-        "company_type": "Public sector organization + company partnership",
+        "company_type": "Public procurement units (e.g. municipalities, joint municipal authorities, government agencies and other contracting entities covered by the Public Procurement Act)",
         "requirements": [
-          "Public sector organization as applicant",
-          "Develops solution to public sector challenge",
-          "Innovation procurement process"
+          "Public procurement unit as applicant aiming at long-term development and renewal of its services and operations",
+          "Procurement implemented as an innovative procurement (e.g. purchase of a new solution, pre-commercial procurement or catalyst procurement) with cooperation between the procurer, companies and end users",
+          "Project size significant enough to boost the sector and, in practice, a large share of the budget (at least around 80%) consisting of research and development activities"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Varies by project",
-        "typical_amount": "EUR 200,000 - 2,000,000"
+        "percentage": "Business Finland typically funds around 50% of the project’s eligible costs.",
+        "typical_amount": "Funding is granted case-by-case; supported projects have ranged from hundreds of thousands to several million euros depending on the scope and size of the procurement."
       },
-      "focus_areas": ["Public Sector", "Innovation Procurement", "Service Development"],
+      "focus_areas": [
+        "Public Sector",
+        "Innovation Procurement",
+        "Service Development"
+      ],
       "deadline": "Continuous application"
     },
     {
@@ -299,37 +366,50 @@
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50% of eligible costs",
-        "max_amount": "EUR 100,000 per project",
-        "min_project_cost": "EUR 40,000"
+        "percentage": "Business Finland grant up to 75% of eligible project costs (company self-financing at least 25%)",
+        "max_amount": "EUR 60,000 per project (max project budget typically around EUR 80,000)",
+        "min_project_cost": "Total project budget typically at least around EUR 30,000"
       },
-      "focus_areas": ["Internationalization", "Growth Strategy", "Export Markets", "Business Development"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Internationalization",
+        "Growth Strategy",
+        "Export Markets",
+        "Business Development"
+      ],
+      "deadline": "Call currently closed to new applications (Tempo funding call closed on 3 October 2025)"
     },
     {
       "id": 13,
-      "name": "Talent Funding",
+      "name": "Innovation Voucher (Innovaatioseteli)",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/Talent-Funding/",
-      "description": "Funding for developing HR practices and recruiting international talent for growth.",
+      "url": "https://www.businessfinland.fi/globalassets/finnish-customers/01-funding/innovation-voucher-funding-criteria-for-applications-received-in-2023.pdf",
+      "description": "De minimis aid for SMEs to purchase external expert services to develop a completely new product or service idea with international growth potential.",
       "eligibility": {
-        "company_type": "SME or Midcap",
-        "company_size": "Max 499 employees",
+        "company_type": "SME in corporate form (not sole trader, large enterprise, public or non-profit organisation, foundation, association, or Åland-based company)",
         "requirements": [
-          "International growth ambition",
-          "Developing HR/talent management for internationalization",
-          "Recruiting international talent",
-          "Sufficient own financing"
+          "Company is in the prepayment register",
+          "Credit rating (Rating Alfa, Suomen Asiakastieto) at least A",
+          "Full-time entrepreneur in the company for at least 3 months OR at least one full-time employee employed for at least 3 months before applying",
+          "New product or service idea with international growth potential (not just further development of an existing product/service)",
+          "Need for external expert services to progress the idea",
+          "Company has plans for internationalisation",
+          "De minimis aid limits not exceeded and no conflicting ongoing Business Finland funding (with specified exceptions in current criteria)"
         ]
       },
       "funding_details": {
-        "type": "Grant",
-        "percentage": "Up to 50% of eligible costs",
-        "max_amount": "EUR 100,000 per project",
-        "min_project_cost": "EUR 40,000"
+        "type": "Grant (de minimis aid)",
+        "amount": "Typically EUR 6,000 (covers 100% of the purchased expert services excluding VAT; company can receive the voucher only once)",
+        "use_of_funds": "Purchase external expert services for innovation activities, such as feasibility and marketability studies, demos and prototypes, testing and experiments, IPR and novelty studies, or using research results.",
+        "notes": "Funding criteria and call status have changed over time; always check Business Finland for the latest information."
       },
-      "focus_areas": ["Talent Acquisition", "International Growth", "HR Development", "Management"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Innovation",
+        "Product Development",
+        "Service Development",
+        "International Growth",
+        "External Expert Services"
+      ],
+      "deadline": "Call-based; application windows opened periodically (check Business Finland website for current status)."
     },
     {
       "id": 14,
@@ -344,311 +424,409 @@
         "requirements": [
           "Innovative business model",
           "International growth potential",
-          "Min 10% of costs in R&D in one of past 3 years",
-          "Not continued another company's business",
-          "No profit distribution",
-          "Significant growth funding from external investors"
+          "Min 10% of total costs in R&D in one of the past three financial years",
+          "Not continued another company's business (not formed through merger, demerger or acquisition of existing operations)",
+          "No profit distribution during the funding period",
+          "Opportunity and willingness to obtain external growth funding (e.g. private capital investments)"
         ]
       },
       "funding_details": {
-        "type": "Grant + Loan",
-        "phase1": "EUR 500,000 - 1,000,000 (50% grant, 50% loan)",
-        "phase2": "Additional EUR 1,000,000 - 1,500,000 (40% grant, 60% loan)",
-        "total": "Up to EUR 2,500,000 over phases"
+        "type": "Grant (three phases; for companies selected before 1 January 2024 the third phase may instead be a loan)",
+        "phase1": "EUR 250,000 grant (phase 1; typically covers up to 75% of eligible costs)",
+        "phase2": "EUR 250,000 grant (phase 2; typically covers up to 75% of eligible costs)",
+        "total": "Up to EUR 1,000,000 in grants over three phases for companies selected from 2024 onwards (EUR 250,000 + 250,000 + 500,000; earlier funding decisions may have a loan in the third phase instead of a grant)"
       },
-      "focus_areas": ["Startup", "Scaling", "Innovation", "Internationalization"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Startup",
+        "Scaling",
+        "Innovation",
+        "Internationalization"
+      ],
+      "deadline": "Call currently closed to new applications (Young Innovative Companies funding call closed on 10 October 2025; existing NIY projects continue)"
     },
     {
       "id": 15,
       "name": "Production Incentive for the Audiovisual Industry",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/Audiovisual-production-incentive/",
-      "description": "25% cash rebate for audiovisual productions made in Finland.",
+      "description": "Up to 25% cash rebate for audiovisual productions with eligible production costs incurred in Finland.",
       "eligibility": {
-        "company_type": "Production companies",
-        "sectors": ["Film", "TV series", "Documentaries"],
+        "company_type": "Finnish or foreign production companies and other audiovisual companies selected for the production",
+        "sectors": [
+          "Film",
+          "TV series",
+          "Documentaries",
+          "Animation"
+        ],
         "requirements": [
-          "Professional audiovisual production",
-          "Min EUR 300,000 Finnish costs for fiction",
-          "Min EUR 150,000 Finnish costs for documentaries",
-          "Finnish production coordinator required"
+          "Professional audiovisual production (feature film, documentary film, scripted series-type fiction or animation)",
+          "Minimum expenditure in Finland at least EUR 500,000",
+          "Minimum total production budget: feature film EUR 2,500,000; documentary film EUR 650,000; serial fiction and animation at least EUR 11,500 per finished minute",
+          "If the beneficiary is a foreign company, a Finnish production coordinator with a Finnish business ID is required"
         ]
       },
       "funding_details": {
         "type": "Cash rebate",
-        "percentage": "25% of eligible Finnish costs",
-        "typical_amount": "EUR 75,000 - several million"
+        "percentage": "Up to 25% of eligible production costs incurred in Finland (pre-production, production and post-production); eligible Finnish costs may be a maximum of 80% of the total production budget",
+        "typical_amount": "At least around EUR 125,000 given the minimum EUR 500,000 spend in Finland; actual rebates can reach several million euros for large productions"
       },
-      "focus_areas": ["Film", "TV", "Media", "Creative Industries", "Production"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Film",
+        "TV",
+        "Media",
+        "Creative Industries",
+        "Production"
+      ],
+      "deadline": "Continuous, rolling first-come-first-served while the annual budget remains available"
     },
     {
       "id": 16,
       "name": "Funding for Leading Companies and Ecosystems",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/financing-of-leading-companies-and-ecosystems/",
-      "description": "Large-scale funding for ecosystem-driving innovation projects.",
+      "description": "Funding via challenge competitions for 'leading companies' (Veturi) and their ecosystems to carry out large, long-term R&D and innovation projects that solve major future challenges and significantly increase R&D investments in Finland.",
       "eligibility": {
-        "company_type": "Large globally operating companies + ecosystems",
+        "company_type": "Large globally operating companies or companies aiming to become global players, together with their ecosystems",
         "requirements": [
-          "Globally operating large company as driver",
-          "Ecosystem approach with multiple partners",
-          "Addresses major societal challenges",
-          "Significant impact potential"
+          "Leading company (locomotive) operates globally or has clear potential and commitment to grow into a global player",
+          "Ecosystem approach with multiple partners (SMEs, research organisations and other companies)",
+          "Addresses major future societal or technological challenges (mission-oriented)",
+          "Significant impact on R&D investments, competence, exports and jobs in Finland",
+          "Commitment to a multi-year R&D roadmap and ecosystem development"
         ]
       },
       "funding_details": {
-        "type": "Grant + Loan mix",
-        "typical_amount": "EUR 5,000,000 - 50,000,000+",
-        "percentage": "Varies by participant"
+        "type": "Grant (Business Finland R&D funding; ecosystem partners may also receive other standard Business Finland R&D instruments)",
+        "typical_amount": "For each challenge competition round, up to EUR 20 million for a leading company and up to EUR 50 million for its ecosystem in the first competition category, and up to EUR 10 million for a challenger company and EUR 20 million for its ecosystem in the second category (total Business Finland budget around EUR 80 million per round).",
+        "percentage": "For leading company projects that mainly involve industrial research, Business Finland grant can be up to 40% of total eligible project costs; ecosystem partners are funded according to normal Business Finland R&D funding rules."
       },
-      "focus_areas": ["Ecosystem Development", "Collaboration", "Innovation", "Large Enterprises"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Ecosystem Development",
+        "Collaboration",
+        "Innovation",
+        "Large Enterprises"
+      ],
+      "deadline": "Call-based challenge competitions; the 2025 round opened on 1 April 2025 with first-phase proposal deadline on 5 September 2025 and funding decisions planned for Q1/2026. Future rounds are announced separately."
     },
     {
       "id": 17,
       "name": "Funding for Innovation and Growth Research",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/funding-for-innovation-and-growth-research/",
-      "description": "Funding for research organizations studying impact of global challenges on Finnish business and society.",
+      "description": "Funding for research organizations studying the impact of global challenges on Finnish businesses and society.",
       "eligibility": {
-        "company_type": "Research organizations (universities, research institutes)",
+        "company_type": "Research or information dissemination organizations (e.g. universities, universities of applied sciences, research institutes)",
         "requirements": [
-          "Research organization",
-          "Studying innovation and growth impacts",
-          "Relevant to Finnish business ecosystem"
+          "Applicant is a research or information dissemination organization whose primary objective is to carry out independent research and/or disseminate research results",
+          "Research focuses on the underlying factors of Finland’s innovation environment and growth, and on the impact of global challenges on Finnish businesses and society",
+          "Project is aligned with the annual themes and objectives of the Innovation and Growth Research call",
+          "Active collaboration with policy makers and policy developers",
+          "Strong international cooperation and a multidisciplinary research team"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 95% of eligible costs",
-        "typical_amount": "EUR 200,000 - 2,000,000"
+        "percentage": "Business Finland’s funding level is 95% for research organizations; no corporate co-financing is required",
+        "typical_amount": "Project sizes are not fixed in the official terms; funded projects are typically multi-year research projects with substantial budgets (exact ranges vary by call)"
       },
-      "focus_areas": ["Research", "Innovation Studies", "Growth Research", "Policy"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Research",
+        "Innovation Studies",
+        "Growth Research",
+        "Policy"
+      ],
+      "deadline": "Call-based funding: Innovation and Growth Research is opened as a themed research call with annually changing topics; the call for 2025 has ended and future calls will be announced separately."
     },
     {
       "id": 18,
       "name": "Deep Tech Accelerator (DTA)",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/deep-tech-accelerator-dta/",
-      "description": "Funding for deep tech startups commercializing research results.",
+      "description": "Funding for deep tech startups commercializing research results to accelerate market entry and international growth.",
       "eligibility": {
-        "company_type": "Startup",
-        "company_age": "Under 5 years old",
+        "company_type": "Startup (limited liability company registered in Finland)",
+        "company_age": "Less than 5 years old at the funding decision for phase 1 (costs accepted until the company is max. 8 years old)",
         "requirements": [
-          "Commercializing research/deep tech",
-          "Research-based innovation",
-          "Early commercialization stage",
-          "Strong team",
-          "Significant growth financing committed"
+          "Founded to commercialise a business idea based on scientific research and related intellectual property",
+          "Research-based intellectual property rights and know-how are central to the company’s value creation, market potential and competitiveness",
+          "Deep tech solution is still in the product development phase and involves high technological and market-entry risks",
+          "Small company: fewer than 50 employees and annual net sales or balance sheet total no more than EUR 10 million",
+          "At least 10% of the company’s total costs have been allocated to research and development in one of the previous three financial years",
+          "Company has at least one full financial year completed",
+          "Company has not continued another company’s business and has not been established through a merger (with only limited exceptions)",
+          "Company is not listed and has not distributed profits (e.g. dividends or returns of unrestricted equity)",
+          "Full-time founding team with credible expertise in both technology and business development",
+          "Credible financing plan and sufficient total funding (self-financing and external finance) secured for the DTA phase and other company operations",
+          "Willingness and prerequisites to raise further investments in the company"
         ]
       },
       "funding_details": {
-        "type": "Grant + Loan",
-        "percentage": "75% grant, 25% loan",
-        "amount": "EUR 500,000 - 1,000,000",
-        "duration": "12-18 months"
+        "type": "Grant (phases 1–2) + Loan (phase 3)",
+        "percentage": "Business Finland covers up to 75% of approved project costs in each phase; the first two phases are grants and the third phase is a loan",
+        "amount": "Three phases of up to EUR 400,000 each (total funding package up to EUR 1,200,000 per company, subject to call and funding decision)",
+        "duration": "Each phase is estimated to last 12–18 months; continuation to the next phase depends on meeting agreed goals"
       },
-      "focus_areas": ["Deep Tech", "Research Commercialization", "Innovation", "Startup"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Deep Tech",
+        "Research Commercialization",
+        "Innovation",
+        "Startup"
+      ],
+      "deadline": "Call-based; DTA funding is granted via specific funding calls (e.g. DTA 2025 call), with application deadlines announced on Business Finland’s website"
     },
     {
       "id": 19,
       "name": "Energy Aid",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/Energy-support/",
+      "url": "https://www.businessfinland.fi/suomalaisille-asiakkaille/palvelut/rahoitus/energiatuki/",
       "description": "Support for renewable energy, energy efficiency, and energy system projects.",
       "eligibility": {
         "company_type": "All sizes",
         "requirements": [
-          "Renewable energy production project",
-          "Energy efficiency improvement",
-          "Energy storage/system flexibility",
-          "Project not yet started",
-          "Min EUR 30,000 eligible costs"
+          "Renewable energy production project, energy efficiency improvement or energy system flexibility project",
+          "Project not yet started before the aid decision",
+          "Investment costs of the project between EUR 30,000 and EUR 5,000,000"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "15-40% depending on project type and size",
-        "typical_amount": "EUR 50,000 - 5,000,000",
-        "max_amount": "EUR 5,000,000"
+        "percentage": "Typically 15–30% of eligible costs; for some new-technology projects the rate can be higher in line with the current decree",
+        "typical_amount": "EUR 50,000 - 5,000,000 in eligible investment costs",
+        "max_amount": "Eligible investment costs up to EUR 5,000,000 per project"
       },
-      "focus_areas": ["Renewable Energy", "Energy Efficiency", "Sustainability", "Clean Tech"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Renewable Energy",
+        "Energy Efficiency",
+        "Sustainability",
+        "Clean Tech"
+      ],
+      "deadline": "Continuous application within the current aid scheme period"
     },
     {
       "id": 20,
       "name": "Innovation Aid for Shipbuilding",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/innovation-aid-for-shipbuilding/",
-      "description": "State aid for innovative ship and offshore solutions.",
+      "description": "Government subsidy for companies in the shipbuilding sector to develop and market advanced, innovative ship or offshore solutions that are new in the sector or significantly better than current leading solutions.",
       "eligibility": {
-        "company_type": "Shipbuilding companies",
+        "company_type": "Companies operating in the shipbuilding sector (shipbuilding, ship repair, ship modification, floating and moving offshore structures)",
         "requirements": [
-          "Ship or offshore solution development",
-          "Innovation beyond state of the art",
-          "Order received before application"
+          "Company is registered in Finland and has an office in Finland",
+          "Project involves the experimental development of an innovative product or method in shipbuilding",
+          "Product or process is technically new or significantly better than the current leading solutions in the EU shipbuilding industry",
+          "Application is submitted before the ship order is placed (the aid is granted only after the company has received the order)",
+          "Company has the potential for continued profitable operations and meets Business Finland’s general funding conditions"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 25% of innovation costs (up to 10% of contract value)",
-        "typical_amount": "EUR 1,000,000 - 25,000,000"
+        "percentage": "Grant may not exceed 25% of the eligible costs defined in the Government Decree on state aid for innovations in shipbuilding",
+        "typical_amount": "For a single project, Business Finland can grant up to EUR 25 million; actual grant size is determined case-by-case based on eligible innovation costs"
       },
-      "focus_areas": ["Shipbuilding", "Maritime", "Innovation", "Manufacturing"],
-      "deadline": "Continuous application (apply after receiving order)"
+      "focus_areas": [
+        "Shipbuilding",
+        "Maritime",
+        "Innovation",
+        "Manufacturing"
+      ],
+      "deadline": "Ongoing scheme; applications must be submitted before the ship order is placed (aid granted after the order has been received)"
     },
     {
       "id": 21,
       "name": "European Defense Fund National Co-Funding",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/european-defense-fund-national-co-funding/",
-      "description": "National co-funding for projects receiving EDF funding from EU.",
+      "description": "National co-funding for Finnish participants in European Defense Fund (EDF) defence research and development projects, complementing EU funding and allowing public funding to cover up to 90% of project costs.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "Finnish startups, SMEs, large companies and research organizations",
         "requirements": [
-          "EDF project approved by EU Commission",
-          "Grant Agreement signed with Commission",
-          "Defense R&D project",
-          "Apply within 90 days of EDF Grant Agreement"
+          "Project has received EDF funding and an EDF Grant Agreement is or will be signed with the European Commission",
+          "Applicant is a Finnish startup, SME, large company or research organization participating in the EDF project",
+          "Defense R&D project that significantly strengthens Europe’s defence capabilities and technological self-sufficiency",
+          "Meets Business Finland’s national R&D funding criteria"
         ]
       },
       "funding_details": {
-        "type": "Grant or Loan",
-        "percentage": "Covers national co-financing requirement (typically 20% for SME, 40% for large)",
-        "typical_amount": "EUR 100,000 - 5,000,000"
+        "type": "Grant (national complementary co-funding for EDF projects)",
+        "percentage": "Together with EDF funding, public funding (EDF + national co-funding) can cover up to 90% of the project costs; Business Finland’s share is determined case-by-case based on the Commission’s Grant Agreement and project cost structure.",
+        "typical_amount": "Varies according to EDF project size and EU contribution; Business Finland does not publish a fixed minimum or maximum amount for national co-funding."
       },
-      "focus_areas": ["Defense", "Security", "R&D", "EU Funding"],
-      "deadline": "Within 90 days of EDF Grant Agreement"
+      "focus_areas": [
+        "Defense",
+        "Security",
+        "R&D",
+        "EU Funding"
+      ],
+      "deadline": "Call-specific. For the EDF 2025 call, applicants must submit a national co-funding application via Business Finland’s online service at the latest when the Ministry of Defence forwards the support request to Business Finland; for EDF 2024 projects, applications for complementary funding must be submitted within 90 days from signing the EDF Grant Agreement. Future calls may have updated timelines, so applicants should always follow the current guidance on the Business Finland EDF National Co-Funding page."
     },
     {
       "id": 22,
-      "name": "Preparatory Funding for Horizon Europe, EDF and Innovation Fund",
+      "name": "Preparatory Funding for Horizon, EDF and Innovation Fund Projects",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/horizon-europe/",
-      "description": "Funding for preparing EU project applications.",
+      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/horizon-europe/hakijan-opas/Horizon-EDF-Innovation-Fund-Project-Preparation-Funding/",
+      "description": "Preparatory funding for companies to plan large Horizon Europe, European Defence Fund (EDF) and Innovation Fund projects, including consortium building and application preparation.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "Companies of all sizes operating in Finland (SMEs and large companies)",
         "requirements": [
-          "Preparing Horizon Europe, EDF, or Innovation Fund application",
-          "Relevant expertise and consortium",
-          "High-quality project plan"
+          "Preparing a Horizon Europe, EDF or Innovation Fund project application",
+          "For Horizon Europe / EDF preparation: EU project total budget at least EUR 3 million",
+          "Preparatory project costs may be at most 5% of the participant’s total costs in the planned EU project",
+          "For Horizon Europe / EDF: Finnish partner has a significant role in an extensive consortium (partners from at least three EU or associated countries)",
+          "Personnel in Finland at least 2 FTE, of which at least one is a full-time employee",
+          "Net financial assets in the balance sheet at least equal to the total costs of the preparatory project",
+          "For Innovation Fund preparation: project sufficiently mature in terms of technical planning, business model and financial/legal structure",
+          "For Innovation Fund preparation: the company’s board has not yet made the final investment decision and the company can cover its required own financing share",
+          "Funding is de minimis aid (max EUR 300,000 de minimis aid over three fiscal years, aggregated at group/control level)"
         ]
       },
       "funding_details": {
-        "type": "Grant",
-        "percentage": "Up to 50% of preparation costs",
-        "max_amount": "EUR 30,000 per application"
+        "type": "Grant (de minimis aid)",
+        "percentage": "For Horizon Europe and EDF preparation: up to 75% of eligible preparation costs; for Innovation Fund preparation: up to 50% of eligible preparation costs (in both cases, preparatory project costs may not exceed 5% of the participant’s total costs in the planned EU project).",
+        "max_amount": "For Horizon Europe and EDF: maximum EUR 60,000 per company; for Innovation Fund: maximum EUR 200,000 per company.",
+        "notes": "No advance payment; costs can be reported once the EU application has been evaluated and meets the minimum threshold scores of the respective EU programme."
       },
-      "focus_areas": ["EU Funding", "Project Preparation", "Horizon Europe", "Innovation Fund"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "EU Funding",
+        "Project Preparation",
+        "Horizon Europe",
+        "EDF",
+        "Innovation Fund"
+      ],
+      "deadline": "Continuous call in principle; however, the application period is temporarily closed from 10 November 2025 at 23:59 until further notice due to grant authorisation constraints (no new or incomplete applications can be submitted while closed)."
     },
     {
       "id": 23,
       "name": "Investment Aid for Large Clean Transition Investments",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/investment-aid-for-large-clean-transition-investments/",
-      "description": "Aid for large investments (EUR 30M+) in decarbonization and energy efficiency.",
+      "description": "Grant aid for large industrial investment projects (eligible costs of at least EUR 30 million) that decarbonise production processes, improve energy efficiency or support the transition to a climate-neutral economy in Finland.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "Industrial companies of all sizes investing in Finland (excluding the territory of Åland)",
         "min_investment": "EUR 30,000,000 eligible costs",
         "requirements": [
-          "Decarbonization of industrial processes",
-          "Energy efficiency improvement",
-          "Project not yet started",
-          "Company not in difficulty",
-          "Incentive effect demonstrated"
+          "Investment project carried out in Finland (excluding Åland)",
+          "Eligible investment costs of at least EUR 30 million",
+          "Project significantly advances Finland’s climate and economic policy objectives",
+          "Either reduces direct greenhouse gas emissions from industrial installations by at least 40% OR reduces energy consumption for the supported activity by at least 20% compared to the situation prior to the aid",
+          "Company is not in difficulty and not subject to EU sanctions",
+          "Company is in the prepayment register and has no significant tax debts or enforcement debts without a valid payment plan",
+          "No outstanding recovery order from a previous EU state aid decision",
+          "Application submitted before the start of works (before binding commitments that make the investment irreversible)"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50% (can be higher for SMEs/specific regions)",
-        "typical_amount": "EUR 10,000,000 - 150,000,000",
-        "max_aid": "EUR 150,000,000 per project"
+        "percentage": "For decarbonisation and energy efficiency investments: up to 50% of eligible costs for investments reducing greenhouse gas emissions (excluding electrification), and up to 30% for investments related to electrification that reduce emissions or for investments that reduce energy consumption. For investments in sectors strategic to the climate-neutral transition, aid is generally up to 15% of eligible costs (up to 20% in assisted areas).",
+        "typical_amount": "Aid is granted case-by-case; in the 2025 call, individual grants have been in the tens of millions of euros, with large projects receiving support exceeding EUR 100 million.",
+        "max_aid": "The grant may not exceed EUR 200,000,000 per company/undertaking. If the same investment also receives a tax credit for large clean transition investments, the combined amount of grant and tax credit may not exceed EUR 200,000,000 (for some strategic-sector investments outside assisted areas, a lower EUR 150,000,000 ceiling applies)."
       },
-      "focus_areas": ["Clean Tech", "Decarbonization", "Energy Efficiency", "Industrial Transition"],
-      "deadline": "Continuous application"
-    },
+      "focus_areas": [
+        "Clean Tech",
+        "Decarbonization",
+        "Energy Efficiency",
+        "Industrial Transition"
+      ],
+      "deadline": "Grant call closed (the published call has ended and the grant is currently not available for new applications)."
+    },    
     {
       "id": 24,
       "name": "Tax Credit for Large Clean Transition Investments",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/tax-credit-for-large-clean-transition-investments/",
-      "description": "Tax credit for investments (EUR 50M+) in renewable energy, decarbonization, and climate-neutral production.",
+      "url": "https://www.businessfinland.fi/en/for-finnish-customers/services/funding/tax-credit-for-large-clean-transition-investments",
+      "description": "Investment rebate (tax credit) for large investments (eligible costs of at least EUR 50 million) in Finland that support the transition to a climate-neutral economy, including renewable energy production and storage, decarbonisation and energy efficiency of industrial processes, and the production of equipment, components and critical raw materials that are strategic for the climate-neutral transition.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "Companies of all sizes making eligible investments in Finland (excluding credit and other financial institutions, and companies in difficulty)",
         "min_investment": "EUR 50,000,000 eligible costs",
         "requirements": [
-          "Renewable energy production/storage",
-          "Decarbonization of industrial processes",
-          "Climate-neutral equipment/component production",
-          "Project not yet started",
-          "Company not in difficulty"
+          "Eligible investment costs of at least EUR 50 million in Finland",
+          "Investment in one of the following: energy production from renewable sources and energy storage; decarbonisation of industrial production processes and energy efficiency measures; or production of equipment, components or critical raw materials strategic for the transition to a climate-neutral economy",
+          "Project work has not started before applying for the investment credit (application must be submitted before the start of works)",
+          "Company is not in difficulty and is not a credit or other financial institution",
+          "No outstanding recovery order for unlawful state aid and company/group/controlling owners are not on the EU sanctions list"
         ]
       },
       "funding_details": {
         "type": "Tax credit",
-        "percentage": "Up to 20% of eligible costs (up to 40% for breakthrough projects)",
-        "calculation": "Credit against corporate tax over max 4 years",
-        "typical_amount": "EUR 10,000,000 - 150,000,000"
+        "percentage": "20% of costs accepted as the basis for the investment credit",
+        "calculation": "Tax credit of 20% of eligible investment costs, granted by Business Finland, deducted from corporate income tax starting from the tax year beginning in 2028 and the following 19 tax years; in each tax year a maximum of 10% of the total credit may be deducted (subject to the investment being completed).",
+        "typical_amount": "Varies by project; for eligible investments of at least EUR 50,000,000 the tax credit can reach tens of millions of euros, with a statutory maximum of EUR 150,000,000 per company or group."
       },
-      "focus_areas": ["Renewable Energy", "Clean Tech", "Manufacturing", "Climate Transition"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Renewable Energy",
+        "Clean Tech",
+        "Manufacturing",
+        "Climate Transition"
+      ],
+      "deadline": "Application period has ended; the tax credit is no longer available for new applications under the current scheme."
     },
     {
       "id": 25,
       "name": "Circular Economy Investment Grant",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/Circular-economy-investment-grant/",
-      "description": "Grant for circular economy investments exceeding environmental standards or increasing recycling.",
+      "description": "Grant for circular economy investments by companies operating in Finland that improve the level of environmental protection beyond EU standards or increase waste recycling with solutions that exceed the current level of technical development.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "All sizes (companies registered and operating in mainland Finland)",
         "requirements": [
-          "Improves environmental protection beyond EU standards",
-          "OR increases waste recycling beyond state of technical development",
-          "Investment in tangible/intangible assets",
-          "Project not yet started"
+          "Improves environmental protection beyond EU standards OR increases waste recycling beyond the current level of technological development",
+          "Investment in circular economy in Finland with significant environmental impact and potential for business and employment growth",
+          "Company has financial prerequisites to cover its self-financing share and to operate profitably",
+          "Project not yet started at the time of application",
+          "Company is in the prepayment register and has no significant unarranged tax or payment defaults",
+          "Company is not an undertaking in difficulty as defined in EU state aid rules (with specific COVID-era exceptions)"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 45% for SME, 35% for midcap, 25% for large company",
-        "typical_amount": "EUR 500,000 - 15,000,000"
+        "percentage": "Maximum aid intensity for additional investment costs: up to 45% for SMEs and up to 35% for large companies (incl. midcap), determined case-by-case in line with EU state aid rules.",
+        "typical_amount": "The maximum grant for a single company and project is EUR 15,000,000; actual grant amounts vary by project size and eligible additional costs."
       },
-      "focus_areas": ["Circular Economy", "Waste Management", "Recycling", "Sustainability"],
-      "deadline": "Continuous application"
+      "focus_areas": [
+        "Circular Economy",
+        "Waste Management",
+        "Recycling",
+        "Sustainability"
+      ],
+      "deadline": "Currently no open call for new applications; previous calls were implemented under Finland's Sustainable Growth Programme (RRF)."
     },
     {
       "id": 26,
       "name": "Funding for Business Development in Disruptive Circumstances",
       "provider": "Business Finland",
       "url": "https://www.businessfinland.fi/en/services/funding/funding-services/disruptive-situations-funding/",
-      "description": "Support for business development during crises and disruptive situations.",
+      "description": "Temporary grant funding instrument used mainly during the COVID-19 crisis to support companies in developing their business, products and services in disruptive market circumstances. The scheme is no longer open to new applications.",
       "eligibility": {
-        "company_type": "All sizes",
+        "company_type": "SMEs employing 6–250 people and midcap companies (larger than SME but with group turnover under EUR 300 million)",
         "requirements": [
-          "Affected by disruptive circumstances (crisis, pandemic, etc.)",
-          "Business development project to adapt/recover",
-          "Active during crisis period"
+          "Company employs at least 6 people (including entrepreneur(s)) at the time of application",
+          "Company had viable business and prerequisites for profitability before the disruptive situation (e.g. COVID-19)",
+          "Company is not a firm in difficulty under EU state aid rules",
+          "Applicant is not a large company, private trader, public organisation, foundation or company registered in Åland",
+          "Funding used for development of business operations and/or new products and services, not for covering losses, fixed costs or pure working capital",
+          "Project activities are new to the company and project had not started before the application"
         ]
       },
       "funding_details": {
-        "type": "Grant + Loan",
-        "percentage": "Varies by situation and company size",
-        "typical_amount": "EUR 50,000 - 2,000,000"
+        "type": "Grant (de minimis aid)",
+        "percentage": "Grant covered up to 80% of approved project costs (company self-financing at least 20%)",
+        "typical_amount": "Preliminary study: grant up to EUR 10,000 (project size max EUR 12,500). Development funding: grant up to EUR 100,000 (project size max EUR 125,000).",
+        "use_of_funds": "Costs of preliminary analyses and development measures that improve the company’s chances during and after a disruption caused e.g. by the coronavirus (e.g. new business models, digital services, sales and marketing development)."
       },
-      "focus_areas": ["Crisis Management", "Business Continuity", "Resilience", "Recovery"],
-      "deadline": "Active during crisis periods"
+      "focus_areas": [
+        "Crisis Management",
+        "Business Continuity",
+        "Resilience",
+        "Recovery",
+        "Business Development"
+      ],
+      "deadline": "Program was temporary and is no longer open; used during specific disruptive periods such as the COVID-19 crisis."
     },
     {
       "id": 27,
       "name": "Business Subsidies (Yritystuki)",
       "provider": "Ministry of Economic Affairs and Employment",
-      "url": "https://tem.fi/frontpage",
-      "description": "Various business development subsidies administered through ELY Centres.",
+      "url": "https://tem.fi/en/enterprise-financing",
+      "description": "Umbrella term for various business development subsidies and support schemes (such as enterprise development grants and start-up grants) administered via ELY Centres under the Ministry of Economic Affairs and Employment.",
       "eligibility": {
         "company_type": "SME",
         "requirements": [
@@ -662,29 +840,40 @@
         "percentage": "Varies by program",
         "administered_by": "ELY Centres"
       },
-      "focus_areas": ["Regional Development", "Job Creation", "Business Development"],
+      "focus_areas": [
+        "Regional Development",
+        "Job Creation",
+        "Business Development"
+      ],
       "deadline": "Program-specific"
     },
     {
       "id": 28,
       "name": "Rural Development Funding",
       "provider": "Ministry of Agriculture and Forestry",
-      "url": "https://mmm.fi/en/forests/forestry/public-funding",
-      "description": "Support for rural businesses and bioeconomy.",
+      "url": "https://mmm.fi/en/rural-areas/rural-entrepreneurship",
+      "description": "Support for rural entrepreneurship and businesses, including agriculture, forestry, food and other rural sectors, mainly financed via the EU rural development fund and Finland’s CAP Strategic Plan 2023–2027.",
       "eligibility": {
         "company_type": "Rural businesses, agriculture, forestry",
         "location": "Rural areas",
         "requirements": [
-          "Operating in rural area",
-          "Agriculture, forestry, food, or bioeconomy sector"
+          "Operating in a designated rural area",
+          "Agriculture, forestry, food, bioeconomy or other rural business sector",
+          "Development, investment or start-up project that meets CAP and national criteria"
         ]
       },
       "funding_details": {
-        "type": "Grant and loan",
-        "percentage": "Varies (typically 20-40%)",
-        "administered_by": "ELY Centres / Mavi"
+        "type": "Grant (may be combined with other financing such as loans or interest-subsidised loans)",
+        "percentage": "Typically 20–50% of eligible costs depending on measure, region and beneficiary",
+        "administered_by": "ELY Centres and Leader groups under the Ministry of Agriculture and Forestry (applications usually via the Hyrrä e-service)"
       },
-      "focus_areas": ["Agriculture", "Forestry", "Bioeconomy", "Rural Development", "Food Industry"],
+      "focus_areas": [
+        "Agriculture",
+        "Forestry",
+        "Bioeconomy",
+        "Rural Development",
+        "Food Industry"
+      ],
       "deadline": "Program-specific application periods"
     },
     {
@@ -692,269 +881,363 @@
       "name": "Horizon Europe - Pillar 2: Global Challenges and European Industrial Competitiveness",
       "provider": "European Commission",
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/horizon",
-      "description": "EU's key funding for research and innovation addressing global challenges.",
+      "description": "Horizon Europe is the EU's 2021–2027 research and innovation framework programme with a budget of EUR 95.5 billion. Pillar 2 provides the largest share of the programme’s budget and funds collaborative research and innovation projects that address major global challenges and strengthen European industrial competitiveness.",
       "eligibility": {
-        "company_type": "All sizes (typically requires consortium)",
+        "company_type": "All organisation types and sizes (universities, research organisations, SMEs, large companies, public bodies, NGOs, etc.)",
         "requirements": [
-          "International consortium (min 3 entities from 3 EU countries)",
-          "Research & innovation project",
-          "Addresses program themes"
+          "International consortium in most calls: at least three independent legal entities from three different EU Member States or Horizon Europe Associated Countries (unless the specific topic defines other rules)",
+          "Research and innovation project responding to a specific call topic under one of the Pillar 2 clusters",
+          "Compliance with all call- and topic-specific eligibility, admissibility and evaluation criteria as set out in the Horizon Europe Work Programme and call documents"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "70-100% of eligible costs",
-        "project_size": "EUR 2-10 million typical",
-        "duration": "2-5 years"
+        "percentage": "Research and Innovation Actions (RIA) and Coordination and Support Actions (CSA): up to 100% of eligible direct costs. Innovation Actions (IA): 70% of eligible direct costs (100% for non-profit organisations).",
+        "project_size": "Varies by topic; many collaborative projects have EU contributions in the rough range of EUR 2–15 million.",
+        "duration": "Typically around 3–5 years, depending on the call and project scope."
       },
       "focus_areas": [
         "Health",
-        "Culture/Creativity/Society",
-        "Civil Security",
-        "Digital/Industry/Space",
-        "Climate/Energy/Mobility",
-        "Food/Bioeconomy/Natural Resources"
+        "Culture, Creativity and Inclusive Society",
+        "Civil Security for Society",
+        "Digital, Industry and Space",
+        "Climate, Energy and Mobility",
+        "Food, Bioeconomy, Natural Resources, Agriculture and Environment"
       ],
-      "deadline": "Multiple calls annually",
-      "application_process": "Through EU Funding & Tenders Portal"
+      "deadline": "Multiple calls each work programme period, with annual or biennial call deadlines depending on the cluster and topic.",
+      "application_process": "Applicants identify a suitable topic and submit proposals electronically via the EU Funding & Tenders Portal."
     },
     {
       "id": 30,
       "name": "Horizon Europe - Pillar 3: Innovative Europe (EIC)",
       "provider": "European Innovation Council (EIC)",
-      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/programmes/horizon",
-      "description": "Support for breakthrough innovation - Pathfinder, Transition, Accelerator.",
+      "url": "https://eic.ec.europa.eu/eic-funding-opportunities_en",
+      "description": "Horizon Europe’s Pillar 3 (Innovative Europe) is implemented mainly through the European Innovation Council (EIC), which supports breakthrough and market-creating innovation via three main instruments: EIC Pathfinder, EIC Transition and EIC Accelerator.",
       "eligibility": {
-        "company_type": "SMEs, startups, individuals",
+        "company_type": "SMEs, start-ups, small mid-caps, researchers and research organisations (depending on the specific EIC instrument)",
         "requirements": [
-          "High-risk, high-impact innovation",
-          "EU-based or willing to establish in EU",
-          "Scalable solution"
+          "High-risk, high-impact innovation with clear European and global market potential",
+          "Applicants established in an EU Member State or Horizon Europe Associated Country, or willing to establish there before signing the grant or investment agreement",
+          "Ambition and capacity to scale the innovation internationally, meeting the excellence, impact and risk criteria set out in the relevant EIC Work Programme call"
         ]
       },
       "funding_details": {
-        "type": "Grant + Equity",
-        "eic_pathfinder": "EUR 3-4 million (100% grant)",
-        "eic_transition": "EUR 2.5 million (100% grant)",
-        "eic_accelerator": "EUR 2.5 million grant + up to EUR 15 million equity"
+        "type": "Grant + Equity (blended finance)",
+        "eic_pathfinder": "Grants of up to EUR 3–4 million per project (100% funding) for early-stage, high-risk research on radically new technologies, typically for consortia, with some calls open to smaller consortia or single applicants.",
+        "eic_transition": "Grants of up to EUR 2.5 million (100% funding) to validate and demonstrate technologies in relevant application environments and develop business and market readiness.",
+        "eic_accelerator": "Grant funding of up to EUR 2.5 million (typically 70% of eligible innovation costs) combined with an optional equity investment component usually between EUR 0.5 million and EUR 15 million via the EIC Fund."
       },
-      "focus_areas": ["Deep Tech", "Breakthrough Innovation", "Scaling"],
-      "deadline": "Continuous (Accelerator), Cut-off dates (Pathfinder/Transition)"
+      "focus_areas": [
+        "Deep Tech",
+        "Breakthrough Innovation",
+        "Scaling"
+      ],
+      "deadline": "Regular cut-off dates for each instrument as defined in the annual EIC Work Programme; EIC Accelerator uses a continuous submission for short applications with several cut-off dates per year for full proposals."
     },
     {
       "id": 31,
       "name": "Digital Europe Programme - Digital Skills",
       "provider": "European Commission",
       "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
-      "description": "Funding for digital skills and capacity building.",
+      "description": "Funding under the Digital Europe Programme (DEP) to design and deliver advanced digital skills education and training, and to strengthen Europe’s digital skills ecosystem.",
       "eligibility": {
-        "company_type": "Organizations, universities, companies",
+        "company_type": "Public and private organisations (higher education institutions, VET providers, research organisations, companies, public authorities, NGOs) established in EU Member States or Digital Europe Programme-associated countries",
         "requirements": [
-          "Training/education in digital skills",
-          "Consortium required"
+          "Applicants must be legal entities established in an EU Member State or a country associated to the Digital Europe Programme",
+          "Projects are usually implemented by transnational consortia (typically at least 3–4 independent organisations from different eligible countries, often including higher education institutions and industry/research partners)",
+          "Proposals must design and deliver education, training or support actions that address advanced digital skills needs (for example in AI, data, cloud/HPC, cybersecurity, semiconductors or other key digital technologies), or strengthen digital skills ecosystems in line with the Digital Europe work programmes",
+          "Detailed eligibility conditions (such as minimum numbers of students/trainees, specific target groups and consortium composition) are defined in each call topic on the EU Funding & Tenders Portal"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 100%",
-        "typical_project": "EUR 2-5 million"
+        "percentage": "Most advanced digital skills actions are co-funded at 50% of eligible costs; some coordination and support actions (CSA) can receive up to 100% EU co-financing, and certain SME-focused actions may allow a higher rate (for example 75% for SMEs) depending on the call topic",
+        "typical_project": "EU contributions to individual projects commonly range from about EUR 2–10 million, with project durations of roughly 2–4 years; exact grant amounts and budgets are specified in each call topic"
       },
-      "focus_areas": ["Digital Skills", "AI Training", "Cybersecurity Training", "Data Training"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Digital Skills",
+        "Advanced Digital Skills",
+        "AI Training",
+        "Cybersecurity Training",
+        "Data Training",
+        "HPC and Cloud",
+        "Semiconductors"
+      ],
+      "deadline": "Annual and multiannual calls published under the Digital Europe work programmes (check the EU Funding & Tenders Portal for current deadlines)"
     },
     {
       "id": 32,
       "name": "Digital Europe Programme - AI",
       "provider": "European Commission",
       "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
-      "description": "Funding for AI deployment and testing.",
+      "description": "Funding under the Digital Europe Programme for deploying and scaling artificial intelligence solutions, including testing and experimentation facilities, AI data and cloud infrastructure, and sectoral AI deployment projects.",
       "eligibility": {
-        "company_type": "Companies, organizations",
+        "company_type": "Companies, research organisations, public sector bodies and other organisations established in EU Member States or associated countries",
         "requirements": [
-          "AI implementation project",
-          "Consortium often required"
+          "Project focused on deployment, testing or uptake of AI (e.g. AI testing and experimentation facilities, AI data spaces, sectoral AI deployment, AI-on-demand platform)",
+          "Compliance with the specific topic conditions in the Digital Europe work programme and call text",
+          "For most calls, a consortium of independent organisations from multiple eligible countries (typically at least three entities from three different Member States or associated countries), unless the call explicitly allows single applicants",
+          "Sound technical and business implementation plan, including measures for trustworthy, lawful and ethical AI, data protection and cybersecurity",
+          "Sufficient operational and financial capacity to carry out the project"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50-100%",
-        "typical_project": "EUR 2-10 million"
+        "percentage": "For deployment projects (simple grants), EU co-funding is typically around 50% of eligible costs; some coordination/support or capacity-building actions can receive up to 100% funding, depending on the call topic and type of action.",
+        "typical_project": "Project budgets commonly range from around EUR 2 million to over EUR 10 million, with some flagship AI testing or infrastructure actions significantly larger; exact size and funding rate are specified per call topic in the work programme."
       },
-      "focus_areas": ["Artificial Intelligence", "AI Deployment", "AI Testing"],
-      "deadline": "Multiple calls annually"
+      "focus_areas": [
+        "Artificial Intelligence",
+        "AI Deployment",
+        "AI Testing",
+        "Data and Cloud Infrastructure",
+        "Sectoral AI Use Cases"
+      ],
+      "deadline": "Multiple calls published periodically under the Digital Europe work programme; deadlines and topics are announced on the EU Funding & Tenders Portal."
     },
     {
       "id": 33,
       "name": "Digital Europe Programme - Cybersecurity",
       "provider": "European Commission",
       "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
-      "description": "Funding for cybersecurity infrastructure and capabilities.",
+      "description": "Funding under the Digital Europe Programme to strengthen EU-wide cybersecurity capacity, infrastructure and skills, including support for cybersecurity infrastructure, operational cooperation, preparedness, skills and deployment of advanced cybersecurity solutions.",
       "eligibility": {
-        "company_type": "Companies, public sector",
+        "company_type": "Companies, public-sector bodies, research organisations, universities and other eligible entities established in EU/EEA Member States or associated countries (specific calls may be restricted, e.g. to public bodies or national coordination centres).",
         "requirements": [
-          "Cybersecurity project",
-          "Critical infrastructure or capacity building"
+          "Project addresses priorities and objectives in the current Digital Europe cybersecurity work programme (e.g. infrastructure, operational cooperation, skills, tools or services).",
+          "Participation in a transnational consortium is required for most calls (typically several entities from different eligible countries), unless a specific call allows single beneficiaries.",
+          "Compliance with Digital Europe Programme rules on security restrictions, third-country participation and procurement where applicable.",
+          "Project proposal meets the call-specific criteria for relevance, implementation quality and impact as set out in each topic description."
         ]
       },
       "funding_details": {
-        "type": "Grant",
-        "percentage": "Up to 100%",
-        "typical_project": "EUR 3-15 million"
+        "type": "Grant (co-funding)",
+        "percentage": "For deployment-type actions, the EU co-funding rate is typically around 50% of eligible costs; some coordination and support actions may be funded at a higher rate (up to 100%). The exact funding rate is defined in each call topic.",
+        "typical_project": "Indicative EU contribution per project often in the range of EUR 3–15 million, depending on the specific cybersecurity call and topic."
       },
-      "focus_areas": ["Cybersecurity", "Critical Infrastructure", "Security Operations Centers"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Cybersecurity",
+        "Critical Infrastructure",
+        "Security Operations Centers",
+        "Cyber Skills and Capacity Building",
+        "Incident Preparedness and Response"
+      ],
+      "deadline": "Annual or multi-annual calls published under the Digital Europe Programme cybersecurity work programme (check the EU Funding & Tenders Portal for current open calls)."
     },
     {
       "id": 34,
       "name": "Innovation Fund - Large Scale Projects",
       "provider": "European Commission",
-      "url": "https://climate.ec.europa.eu/eu-action/funding-climate-action/innovation-fund_en",
-      "description": "Support for demonstration of innovative low-carbon technologies.",
+      "url": "https://climate.ec.europa.eu/eu-action/eu-funding-climate-action/innovation-fund_en",
+      "description": "Support for first-of-a-kind and highly innovative low- and net-zero-carbon projects at commercial scale, helping to decarbonise industry and energy systems in the EU.",
       "eligibility": {
-        "company_type": "All sizes",
-        "min_capex": "EUR 7.5 million",
+        "company_type": "All sizes (single applicants or consortia)",
+        "min_capex": "Generally projects with total capital expenditure (CAPEX) above EUR 7.5 million are considered large-scale (some recent calls define higher CAPEX thresholds per topic).",
         "requirements": [
-          "Innovative low-carbon technology",
-          "Significant GHG emission reduction",
-          "Located in EU/EEA/candidate countries"
+          "Innovative low- or net-zero-carbon technology or process that goes beyond the state of the art",
+          "Significant, credible greenhouse gas (GHG) emission reductions compared with a reference scenario",
+          "Project implemented in an eligible country (EU Member States plus Norway, Iceland and Liechtenstein or other associated countries as specified in each call)",
+          "Project sufficiently mature in terms of planning, business model, and financial/legal structure at the time of application",
+          "Compliance with call-specific award criteria (innovation level, GHG avoidance, project maturity, scalability and cost efficiency)"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60% of additional capex",
-        "typical_award": "EUR 10-100 million+",
-        "sectors": ["Renewables", "Energy storage", "Industrial processes", "CCS/CCU", "Clean products"]
+        "percentage": "Regular Innovation Fund grants can cover up to 60% of the project’s relevant costs (typically additional capital and, for large-scale projects, part of operating costs compared to a conventional reference scenario).",
+        "typical_award": "Many large-scale projects receive grants in the order of EUR 10–100+ million per project, with no formal maximum grant limit set in the general rules.",
+        "sectors": [
+          "Renewables",
+          "Energy storage",
+          "Industrial processes",
+          "CCS/CCU",
+          "Clean products",
+          "Net-zero mobility and other sectors covered by the EU ETS revision"
+        ]
       },
-      "focus_areas": ["Climate", "Clean Tech", "Decarbonization", "Renewable Energy"],
-      "deadline": "1-2 calls per year"
+      "focus_areas": [
+        "Climate",
+        "Clean Tech",
+        "Decarbonization",
+        "Renewable Energy"
+      ],
+      "deadline": "Calls for large-scale projects are launched periodically (roughly once per year); timelines and topics are defined in each specific call for proposals."
     },
     {
       "id": 35,
       "name": "Innovation Fund - Small Scale Projects",
       "provider": "European Commission",
       "url": "https://climate.ec.europa.eu/eu-action/funding-climate-action/innovation-fund_en",
-      "description": "Support for smaller innovative climate projects.",
+      "description": "Support for smaller demonstration projects of innovative low-carbon technologies and processes with total capital expenditure between EUR 2.5 and 7.5 million.",
       "eligibility": {
-        "company_type": "All sizes",
-        "capex": "EUR 2.5 - 7.5 million",
+        "company_type": "All sizes (single applicant or consortium from eligible EU/EEA countries)",
+        "capex": "Total project capital expenditure between EUR 2.5 million and EUR 7.5 million",
         "requirements": [
-          "Innovative climate technology",
-          "GHG reduction",
-          "EU/EEA location"
+          "Innovative low-carbon technology or process in a sector covered by the EU Emissions Trading System (ETS) or producing low-carbon substitute products",
+          "Project located in an eligible EU/EEA country (as defined in the specific call)",
+          "Significant greenhouse gas emission reduction compared to a reference scenario",
+          "Project meets call-specific criteria on innovation, maturity, scalability and cost-efficiency"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60%",
-        "typical_award": "EUR 2-5 million"
+        "percentage": "Up to 60% of the project's relevant capital costs (CAPEX)",
+        "typical_award": "Up to about EUR 4.5 million (maximum grant for small-scale Innovation Fund projects)"
       },
-      "focus_areas": ["Climate Innovation", "Clean Tech", "SME Projects"],
-      "deadline": "Annual call"
+      "focus_areas": [
+        "Climate Innovation",
+        "Clean Tech",
+        "SME Projects",
+        "Renewable Energy",
+        "Energy Storage",
+        "Industrial Decarbonization"
+      ],
+      "deadline": "Annual or periodic small-scale calls published via the EU Funding & Tenders Portal"
     },
     {
       "id": 36,
       "name": "LIFE Programme - Climate Action",
       "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "description": "EU funding for climate change mitigation and adaptation.",
+      "url": "https://cinea.ec.europa.eu/programmes/life/life-climate-action-sub-programme_en",
+      "description": "EU funding under the LIFE Climate Action sub-programme for projects on climate change mitigation, climate change adaptation, and climate governance and information.",
       "eligibility": {
-        "company_type": "All organizations",
+        "company_type": "Public and private organisations (public bodies, companies, NGOs, research organisations, etc.) from LIFE-eligible countries",
         "requirements": [
-          "Climate mitigation or adaptation project",
-          "EU-based"
+          "Project relates to climate change mitigation (e.g. renewable energies, energy efficiency, farming, land use, peatland management), climate change adaptation (e.g. resilience to water scarcity, droughts, forest fires or floods, adaptive technologies for economic sectors, safeguarding natural resources), or climate governance and information (e.g. awareness raising, training and capacity building, law compliance and enforcement, knowledge development, stakeholder participation).",
+          "Applicant and partners are established in an EU Member State or another LIFE-eligible country according to the conditions of the annual LIFE call.",
+          "Project is a best practice, pilot or demonstration project (for mitigation/adaptation) or an information, awareness and dissemination / governance project (for climate governance and information), not pure research.",
+          "Project contributes to the implementation and development of EU climate policy and law and delivers concrete, measurable climate benefits."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60-95%",
-        "typical_project": "EUR 1-10 million"
+        "percentage": "Climate change mitigation, climate change adaptation, and climate governance and information projects receive co-funding of up to 55% of eligible project costs. Certain other LIFE project types (e.g. integrated, preparatory or technical assistance projects) can receive up to 60% under separate schemes.",
+        "typical_project": "Traditional LIFE Climate Action projects often have total budgets from roughly EUR 0.5–5 million, with LIFE contributions commonly in the range of about EUR 0.5–2 million depending on scope and partnership."
       },
-      "focus_areas": ["Climate Mitigation", "Climate Adaptation", "Energy Efficiency"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Climate Mitigation",
+        "Climate Adaptation",
+        "Climate Governance and Information",
+        "Renewable Energy",
+        "Energy Efficiency",
+        "Resilience to Droughts, Forest Fires and Floods",
+        "Safeguarding Natural Resources",
+        "Awareness Raising",
+        "Training and Capacity Building",
+        "Law Compliance and Enforcement"
+      ],
+      "deadline": "Annual calls; specific opening and closing dates are published each year under the LIFE Programme call for proposals."
     },
     {
       "id": 37,
       "name": "LIFE Programme - Nature & Biodiversity",
       "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "description": "Funding for nature conservation and biodiversity projects.",
+      "url": "https://cinea.ec.europa.eu/programmes/life/nature-and-biodiversity_en",
+      "description": "EU funding for projects that protect and restore nature, biodiversity and ecosystems, in particular habitats and species and the Natura 2000 network.",
       "eligibility": {
-        "company_type": "All organizations",
+        "company_type": "All organisations (public and private legal entities) from countries eligible for the LIFE programme",
         "requirements": [
-          "Nature/biodiversity project",
-          "EU species or habitats"
+          "Project falls under the objectives and priority topics of the LIFE Nature and Biodiversity sub-programme (e.g. conservation, restoration or management of species, habitats or Natura 2000 sites, implementation of EU nature and biodiversity policy)",
+          "Applicant is a legal person established in an EU Member State or another country associated with LIFE, as defined in the annual call documents",
+          "Project complies with the specific eligibility and admissibility criteria of the relevant LIFE call for proposals (e.g. Standard Action Projects, Strategic Nature Projects)",
+          "Proposal is submitted electronically via the EU Funding & Tenders Portal within the call deadline"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60-75%",
-        "typical_project": "EUR 0.5-5 million"
+        "percentage": "For Standard Action Projects, EU co-financing is generally up to 60% of total eligible costs; this may increase up to 75% for projects that focus on concrete conservation actions for priority habitats or species and allocate at least 50% of eligible costs to such actions, subject to current call conditions.",
+        "typical_project": "In recent calls, LIFE Nature and Biodiversity projects have often received EU contributions in the range of about EUR 1–10 million per project, depending on scope and project type."
       },
-      "focus_areas": ["Biodiversity", "Nature Conservation", "Habitats"],
-      "deadline": "Annual call"
+      "focus_areas": [
+        "Biodiversity",
+        "Nature Conservation",
+        "Habitats",
+        "Species Protection",
+        "Natura 2000"
+      ],
+      "deadline": "Annual calls (specific topics and deadlines are published each year on the EU Funding & Tenders Portal)"
     },
     {
       "id": 38,
-      "name": "LIFE Programme - Circular Economy",
-      "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "description": "Support for circular economy and waste reduction projects.",
+      "name": "LIFE Programme - Circular Economy and Quality of Life",
+      "provider": "European Commission / CINEA",
+      "url": "https://cinea.ec.europa.eu/programmes/life/circular-economy-and-quality-life_en",
+      "description": "EU grants for projects that advance the circular economy and zero pollution, including recovery of resources from waste and measures to protect, restore and improve the environment and citizens’ quality of life.",
       "eligibility": {
-        "company_type": "All organizations",
+        "company_type": "Legal entities established in EU Member States or associated countries (public bodies, private companies, NGOs, universities)",
         "requirements": [
-          "Circular economy project",
-          "Waste reduction/resource efficiency"
+          "Project clearly contributes to LIFE Circular Economy and Quality of Life objectives (e.g. circular economy, waste, air, water, soil, chemicals, noise, urban environment, environmental governance)",
+          "Complies with the specific topic, technical and financial eligibility criteria in the yearly LIFE call"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60%",
-        "typical_project": "EUR 1-5 million"
+        "percentage": "Up to 60% of eligible costs for most projects under this sub-programme (higher rates for some specific LIFE call types)",
+        "typical_project": "EU contribution typically around EUR 2–10 million; total project budgets usually in the low multi-million range"
       },
-      "focus_areas": ["Circular Economy", "Waste Management", "Resource Efficiency"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Circular economy and waste",
+        "Waste reduction and resource efficiency",
+        "Zero pollution (air, water, soil, noise, chemicals, industrial emissions)",
+        "Sustainable management of natural resources and urban environment",
+        "Environmental governance and implementation of EU environmental law"
+      ],
+      "deadline": "Annual calls (normally opening in late April/May and closing around September; see current LIFE call fiche)"
     },
     {
       "id": 39,
-      "name": "CEF Transport",
-      "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility_en",
-      "description": "Connecting Europe Facility for transport infrastructure.",
+      "name": "Connecting Europe Facility (CEF) for Transport",
+      "provider": "European Commission / CINEA",
+      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility/transport-infrastructure_en",
+      "description": "EU grant scheme that co-finances TEN-T transport infrastructure projects, focusing on cross-border links, removal of bottlenecks, multimodal hubs and modern, safe and sustainable transport networks.",
       "eligibility": {
-        "company_type": "Transport companies, infrastructure operators",
+        "company_type": "EU Member States and, with their agreement, public or private undertakings and bodies (e.g. infrastructure managers, transport operators, ports, cities, regions)",
         "requirements": [
-          "TEN-T network project",
-          "Cross-border or bottleneck removal"
+          "Project located on, or directly serving, the TEN-T core or comprehensive network",
+          "Contribution to cross-border sections, bottleneck removal, missing links or key EU priorities (e.g. multimodal hubs, AFIF, military mobility) in line with the specific call text"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 30-50% (higher for cohesion countries)",
-        "typical_project": "EUR 10-100 million+"
+        "percentage": "Typically up to 30% of eligible costs for works (up to 50% for studies/priority actions and up to 85% for cohesion-funded projects)",
+        "typical_project": "Large infrastructure projects with EU contribution often in the range of EUR 10–100+ million, depending on mode and call"
       },
-      "focus_areas": ["Transport Infrastructure", "Rail", "Ports", "Multimodal Transport"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "TEN-T transport infrastructure",
+        "Rail and inland waterways",
+        "Ports, terminals and logistics hubs",
+        "Multimodal transport and traffic management systems",
+        "Alternative fuels infrastructure and military mobility (specific calls)"
+      ],
+      "deadline": "Recurring calls under the CEF Transport work programme (usually yearly; exact deadlines defined in each call)"
     },
     {
       "id": 40,
-      "name": "CEF Energy",
-      "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility_en",
-      "description": "Funding for trans-European energy infrastructure.",
+      "name": "Connecting Europe Facility (CEF) for Energy",
+      "provider": "European Commission / CINEA",
+      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility/energy-infrastructure-connecting-europe-facility-0_en",
+      "description": "EU grants for trans-European energy infrastructure, supporting cross-border electricity, gas, hydrogen, smart grids, CO2 networks and cross-border renewable energy projects under the TEN-E policy.",
       "eligibility": {
-        "company_type": "Energy companies, TSOs",
+        "company_type": "Energy companies, TSOs and other public or private legal entities (project developers, public authorities, NGOs, research institutions, etc.) established in eligible countries, usually with the agreement of the concerned Member States.",
         "requirements": [
-          "Projects of Common Interest (PCI)",
-          "Cross-border energy infrastructure"
+          "Project is on the official Union list of Projects of Common Interest (PCI) or Projects of Mutual Interest (PMI), or holds CB RES status for cross-border renewable energy.",
+          "Cross-border energy infrastructure with impact on at least two countries and contributing to TEN-E objectives (market integration, security of supply, decarbonisation)."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50%",
-        "typical_project": "EUR 10-100 million+"
+        "percentage": "Up to 50% of eligible costs for studies and works (with higher co-funding rates, up to about 70–75%, possible for certain projects such as outermost regions or high security-of-supply/solidarity cases).",
+        "typical_project": "Large cross-border infrastructure projects, with EU contributions often in the range of EUR 10–100+ million for works on PCIs/PMIs."
       },
-      "focus_areas": ["Energy Infrastructure", "Grid", "Gas", "CO2 Transport", "Smart Grids"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Energy Infrastructure",
+        "Grid (electricity transmission and smart grids)",
+        "Gas infrastructure",
+        "CO2 Transport (cross-border CO2 networks)",
+        "Smart Grids and digitalised energy systems",
+        "Hydrogen infrastructure",
+        "Cross-border renewable energy projects (CB RES)"
+      ],
+      "deadline": "Typically one PCI/PMI call per year for energy infrastructure, plus separate windows for cross-border renewable energy; exact deadlines are defined in each call fiche."
     },
     {
       "id": 41,
@@ -963,89 +1246,109 @@
       "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility_en",
       "description": "Funding for digital connectivity infrastructure.",
       "eligibility": {
-        "company_type": "Companies, public sector",
+        "company_type": "Companies and public-sector organisations (legal entities, public or private bodies)",
         "requirements": [
-          "Digital infrastructure project",
-          "Pan-European relevance"
+          "Digital connectivity infrastructure project (e.g. 5G corridors, backbone networks, cross-border connectivity)",
+          "Pan-European relevance and alignment with CEF Digital work programme priorities",
+          "Applicants established in eligible countries as defined in each call (typically EU Member States and associated countries)"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50-75%",
-        "typical_project": "EUR 5-50 million"
+        "percentage": "Co-funding rates typically between 30% and 75% of eligible costs depending on action type, location and call conditions; some coordination and support actions may be funded up to 100%.",
+        "typical_project": "Single-project EU contributions usually range from a few million up to several tens of millions of euros (roughly EUR 5–50 million), depending on scope."
       },
-      "focus_areas": ["5G Corridors", "Digital Service Infrastructure", "Connectivity"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "5G Corridors",
+        "Digital Service Infrastructure",
+        "Connectivity"
+      ],
+      "deadline": "Calls are launched periodically under the CEF Work Programmes; each call has its own deadline on the EU Funding & Tenders Portal."
     },
     {
       "id": 42,
-      "name": "Nordic Innovation - Green Growth",
-      "provider": "Nordic Energy Research / Nordic Innovation",
-      "url": "https://www.nordicenergy.org/funding/",
-      "description": "Funding for Nordic collaboration on sustainable solutions.",
+      "name": "Nordic Green Growth Research and Innovation Programme",
+      "provider": "NordForsk / Nordic Innovation / Nordic Energy Research",
+      "url": "https://www.nordicinnovation.org/programs/nordic-green-growth-research-and-innovation-program",
+      "description": "Joint Nordic research and innovation programme (2016–2020) that funded large projects on green growth to accelerate the transition towards a sustainable Nordic society, promoting green economic growth, sustainability and competitiveness.",
       "eligibility": {
-        "company_type": "Nordic companies/organizations",
+        "company_type": "Nordic research organisations, companies, public-sector bodies, NGOs and other organisations based in the Nordic countries.",
         "requirements": [
-          "Consortium with partners from min 3 Nordic countries",
-          "Green/sustainable innovation"
+          "Consortium involving partner institutions/industry from at least three Nordic countries, with the host entity based in a Nordic country.",
+          "Project clearly contributes to green growth (e.g. low-carbon and resource-efficient solutions, circular economy, sustainable regional development and competitiveness) as defined in the call text."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50%",
-        "typical_project": "EUR 100,000 - 500,000"
+        "percentage": "For industry-driven projects (Module II), public funding (including Nordic Innovation and other public sources) could cover up to around 50% of total project costs; co-funding was encouraged for research-driven projects (Module I).",
+        "typical_project": "Total programme budget was NOK 73 million for six projects; individual projects typically had total budgets around EUR 1–1.5 million, with Nordic funding covering up to about half for industry-driven projects."
       },
-      "focus_areas": ["Green Growth", "Circular Economy", "Clean Energy", "Sustainable Solutions"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Green growth and low-carbon innovation",
+        "Resource efficiency and circular economy",
+        "Clean energy and sustainable production",
+        "Sustainable regional development and competitiveness"
+      ],
+      "deadline": "One-off call in 2016 (programme 2016–2020, now closed; no current recurring calls under this specific programme)."
     },
     {
       "id": 43,
-      "name": "Nordic Innovation - Digital Transformation",
+      "name": "Nordic Innovation – Digitalisation, AI & Data (various calls)",
       "provider": "Nordic Innovation",
-      "url": "https://www.nordicinnovation.org",
-      "description": "Support for Nordic digital innovation collaboration.",
+      "url": "https://www.nordicinnovation.org/programs/ai-and-data",
+      "description": "Digitalisation and AI-related programmes and calls that fund Nordic cross-border innovation projects using data and artificial intelligence.",
       "eligibility": {
-        "company_type": "Nordic companies",
+        "company_type": "Nordic companies and organisations (exact eligibility defined in each call).",
         "requirements": [
-          "Nordic consortium",
-          "Digital innovation focus"
+          "Applicants based and operating in one or more Nordic countries.",
+          "Normally a Nordic consortium with partners from at least three Nordic countries (see specific call text).",
+          "Project aligned with the digitalisation, AI or data theme of the relevant call."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50%",
-        "typical_project": "EUR 200,000 - 600,000"
+        "percentage": "Nordic Innovation usually requires at least 50% co-funding from project partners, and in many calls public funding (including Nordic Innovation) may not exceed 50% of total project costs; always check the specific call text.",
+        "typical_project": "Funding amounts vary by call; for example, the 'Applied Ethical AI on Nordic Patient Records' call provided NOK 5.8 million in grant funding for a single AI project with at least 50% co-financing."
       },
-      "focus_areas": ["Digital Transformation", "AI", "Data", "Innovation"],
-      "deadline": "Annual calls"
+      "focus_areas": [
+        "Digitalisation",
+        "AI",
+        "Data",
+        "Innovation"
+      ],
+      "deadline": "Individual calls with their own deadlines; there is no single recurring annual 'digital transformation' call."
     },
     {
       "id": 44,
-      "name": "Cooperation between Companies and Research Organizations",
+      "name": "Co-Creation",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/cooperation-between-companies-and-research-organizations/",
-      "description": "Funding for joint actions between companies and research organizations to strengthen business competitiveness and create new international business opportunities. Includes Co-Innovation, Co-Creation, Co-Research, and Research to Business funding.",
+      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/cooperation-between-companies-and-research-organizations/co-creation/",
+      "description": "Funding for research organizations to develop a new research idea together with companies so that it can evolve into a joint Co-Innovation project. The aim is to create significant international business opportunities for companies and enable high-level scientific research in the research organization.",
       "eligibility": {
-        "company_type": "Companies and research organizations (universities, research institutes)",
+        "company_type": "Research and knowledge-dissemination organisations (e.g. universities, universities of applied sciences, research institutions)",
         "requirements": [
-          "Joint project between company and research organization",
-          "Research benefits Finnish export business",
-          "Equal partnership between parties",
-          "New business opportunities focus"
+          "Applicant is a research or knowledge-dissemination organisation whose main goal is to independently conduct basic or industrial research or experimental development, or widely disseminate results through teaching, publications or data transfer",
+          "Research organisation and companies want to develop a new research idea and its potential together OR build a new consortium and competence network and engage companies in joint development",
+          "Idea has high potential and broad applicability and can lead to a joint Co-Innovation project and new international business for Finnish companies",
+          "Project plan focuses on demonstrating the relevance and demand of the idea, engaging companies and building a business and international cooperation network",
+          "Application and brief project plan submitted via Business Finland’s funding e-service in line with Co-Creation call instructions"
         ]
       },
       "funding_details": {
-        "type": "Grant (varies by sub-program)",
-        "programs": {
-          "Co-Innovation": "Joint actions for business competitiveness",
-          "Co-Creation": "Preparation funding for building teams and networks",
-          "Co-Research": "Research projects for new expertise",
-          "Research_to_Business": "Commercialization preparation"
-        },
-        "typical_amount": "Varies by program type"
+        "type": "Grant",
+        "percentage": "Business Finland covers 80% of the accepted total project costs; the research organisation’s self-financing share is 20%.",
+        "max_amount": "Total project costs may not exceed EUR 100,000 per idea (even if several research organisations participate, the combined maximum remains EUR 100,000).",
+        "typical_duration": "Typically 4–6 months per Co-Creation project.",
+        "cost_model": "Funding is based on an overhead cost multiplier of 20% and an indirect personnel cost multiplier of 50% for eligible personnel costs; eligible costs include salaries and wages, indirect personnel costs, overheads, travel, materials and supplies, and necessary purchased services, while e.g. research work, grants, marketing and equipment investments are not accepted as project costs."
       },
-      "focus_areas": ["Research Collaboration", "Innovation", "Commercialization", "Export Business", "Technology Transfer", "Public-Private Partnership"],
-      "deadline": "Continuous application"
-    }
+      "focus_areas": [
+        "Research Collaboration",
+        "Co-Innovation Preparation",
+        "International Business Opportunities",
+        "Business Networks",
+        "International Cooperation"
+      ],
+      "deadline": "Continuous application (Co-Creation funding can be applied for at all times; call information and any updates are provided on the service page)."
+    }    
   ]
 }
