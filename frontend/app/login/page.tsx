@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -14,6 +14,14 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+
+  // Check for signup parameter in URL
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    if (urlParams.get('signup') === 'true') {
+      setIsLogin(false)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -199,7 +207,7 @@ export default function LoginPage() {
         >
           {[
             { icon: '🤖', text: 'AI-Powered' },
-            { icon: '⚡', text: '44 Programs' },
+            { icon: '⚡', text: 'All Programs' },
             { icon: '🎯', text: 'Smart Match' }
           ].map((feature, index) => (
             <motion.div

@@ -38,15 +38,6 @@ def fetch_investors(user_id):
                 'cache_timestamp': cache.created_at.isoformat()
             }), 200
         
-        # Fetch fresh funding data
-        print("Scraping funding sources...")
-        funding_programs = FundingScraperService.scrape_all_sources()
-        
-        if not funding_programs:
-            return jsonify({'error': 'No funding programs found'}), 500
-        
-        print(f"Found {len(funding_programs)} funding programs")
-        
         # Prepare company data for AI matching
         company_data = {
             'name': company.name,
@@ -60,10 +51,15 @@ def fetch_investors(user_id):
             'company_form': getattr(company, 'company_form', None)
         }
         
-        # Use AI to match and rank programs
-        print("Matching with AI...")
+        # Use RAG-based matching (vector search + AI analysis of top 15)
+        print("Matching with RAG (Vector Search + AI)...")
         ai_service = AIMatcherService()
-        matches = ai_service.match_funding_programs(company_data, funding_programs)
+        matches = ai_service.match_funding_programs(company_data)  # No programs = use RAG
+        
+        if not matches:
+            return jsonify({'error': 'No funding programs found in database'}), 500
+        
+        print(f"Found {len(matches)} matches")
         
         # Cache the results
         if cache:

@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import bcrypt
+from pgvector.sqlalchemy import Vector
 
 db = SQLAlchemy()
 
@@ -88,3 +89,79 @@ class FundingMatchCache(db.Model):
             'funding_data': self.funding_data,
             'created_at': self.created_at.isoformat()
         }
+
+class FundingProgram(db.Model):
+    __tablename__ = 'funding_programs'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text, nullable=False)
+    provider = db.Column(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    eligibility = db.Column(db.JSON)
+    focus_areas = db.Column(db.JSON)
+    deadline = db.Column(db.Text)
+    funding_details = db.Column(db.JSON)
+    url = db.Column(db.Text)
+    embedding = db.Column(Vector(384))  # 384-dimensional vector for sentence-transformers
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'provider': self.provider,
+            'description': self.description,
+            'eligibility': self.eligibility or {},
+            'focus_areas': self.focus_areas or [],
+            'deadline': self.deadline,
+            'funding_details': self.funding_details or {},
+            'url': self.url,
+            'created_at': self.created_at.isoformat(),
+            'updated_at': self.updated_at.isoformat()
+        }
+    
+    @staticmethod
+    def find_similar(embedding, limit=15):
+        """
+        Find similar funding programs using cosine similarity
+        Returns programs ordered by similarity (most similar first)
+        """
+        from sqlalchemy import text
+        
+        # Convert embedding to string format for pgvector
+        embedding_str = '[' + ','.join(str(float(x)) for x in embedding) + ']'
+        
+        # Use pgvector's cosine distance operator (<=>)
+        # Lower distance = more similar
+        query = text("""
+            SELECT id, name, provider, description, eligibility, focus_areas, 
+                   deadline, funding_details, url, 
+                   (embedding <=> cast(:embedding as vector)) as distance
+            FROM funding_programs
+            WHERE embedding IS NOT NULL
+            ORDER BY distance ASC
+            LIMIT :limit
+        """)
+        
+        result = db.session.execute(
+            query,
+            {'embedding': embedding_str, 'limit': limit}
+        )
+        
+        programs = []
+        for row in result:
+            programs.append({
+                'id': row[0],
+                'name': row[1],
+                'provider': row[2],
+                'description': row[3],
+                'eligibility': row[4] or {},
+                'focus_areas': row[5] or [],
+                'deadline': row[6],
+                'funding_details': row[7] or {},
+                'url': row[8],
+                'similarity_score': 1 - row[9]  # Convert distance to similarity (0-1)
+            })
+        
+        return programs

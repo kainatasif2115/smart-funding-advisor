@@ -7,6 +7,13 @@ PyJWT==2.8.0
 bcrypt==4.1.2
 requests==2.31.0
 beautifulsoup4==4.12.2
-groq==0.4.1
+groq==0.36.0
 lxml==5.1.0
 werkzeug==3.0.1
+
+# RAG Dependencies (pgvector + embeddings)
+pgvector==0.2.4
+sentence-transformers==2.7.0
+numpy==1.24.3
+torch==2.2.0
+transformers==4.36.0

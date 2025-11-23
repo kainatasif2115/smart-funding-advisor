@@ -30,7 +30,7 @@ export default function LandingPage() {
                 Login
               </Link>
               <Link
-                href="/login"
+                href="/login?signup=true"
                 className="px-6 py-2 bg-[#5cc9ad] text-[#0a2f23] rounded-lg hover:bg-[#4db89c] font-medium transition shadow-lg shadow-emerald-900/50"
               >
                 Get Started
@@ -72,7 +72,7 @@ export default function LandingPage() {
             className="flex gap-4 justify-center"
           >
             <Link
-              href="/login"
+              href="/login?signup=true"
               className="px-8 py-3 bg-[#5cc9ad] text-[#0a2f23] rounded-lg hover:bg-[#4db89c] font-medium text-lg transition shadow-lg shadow-emerald-900/50"
             >
               Start Now
@@ -168,7 +168,7 @@ export default function LandingPage() {
             Join Business Turku's smart funding advisor and discover opportunities for your company.
           </p>
           <Link
-            href="/login"
+            href="/login?signup=true"
             className="inline-block px-8 py-3 bg-[#5cc9ad] text-[#0a2f23] rounded-lg hover:bg-[#4db89c] font-medium text-lg transition shadow-lg shadow-emerald-900/50"
           >
             Get Started Free

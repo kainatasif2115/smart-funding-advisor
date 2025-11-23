@@ -160,7 +160,7 @@ export default function CompanyDetailsPage() {
                   {company?.city && (
                     <div className="bg-white/5 rounded-lg p-4 backdrop-blur">
                       <p className="text-gray-200 text-sm mb-1 font-medium">Location</p>
-                      <p className="text-gray-200 font-semibold">{company.city}, {company.country || 'Finland'}</p>
+                      <p className="text-gray-200 font-semibold">{company.city != 'None' ? `${company.city},` : ''} {company.country || 'Finland'}</p>
                     </div>
                   )}
                   {company?.employees && (
@@ -229,7 +229,7 @@ export default function CompanyDetailsPage() {
               </motion.div>
               <h2 className="text-3xl font-bold text-gray-200 mb-4">Ready to Find Funding?</h2>
               <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
-                Let our AI analyze {company?.name} and discover the best funding opportunities from 44 programs
+                Let our AI analyze {company?.name} and discover the best funding opportunities from all funding programs
               </p>
               <LiquidButton onClick={handleFetchFunding} size="lg" variant="primary">
                 ✨ Fetch Funding Recommendations
@@ -252,7 +252,7 @@ export default function CompanyDetailsPage() {
               />
               <h3 className="text-2xl font-bold text-gray-200 mb-4">Analyzing Company Profile...</h3>
               <div className="space-y-3 max-w-md mx-auto">
-                {['Analyzing 44 funding programs', 'AI matching company profile', 'Generating relevance scores'].map((text, i) => (
+                {['Analyzing all funding programs', 'AI matching company profile', 'Generating relevance scores'].map((text, i) => (
                   <motion.p
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
@@ -334,8 +334,14 @@ export default function CompanyDetailsPage() {
                         <p className="text-slate-400 text-sm leading-relaxed">{program.description}</p>
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold mb-2 text-sm">Funding Amount</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">{program.funding_amount}</p>
+                        {program?.funding_details?.typical_amount || program?.funding_details?.amount ? 
+                          <>
+                            <h4 className="text-white font-semibold mb-2 text-sm">Funding Amount</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed">{program?.funding_details?.typical_amount || program?.funding_details?.amount}</p>
+                          </>
+                        :
+                          <></>
+                        }
                         <h4 className="text-white font-semibold mb-2 text-sm mt-4">Deadline</h4>
                         <p className="text-slate-400 text-sm leading-relaxed">{program.deadline}</p>
                       </div>
@@ -373,7 +379,7 @@ export default function CompanyDetailsPage() {
                         </div>
                         <div className="flex-1">
                           <h4 className="text-white font-bold mb-1">Eligibility</h4>
-                          <p className="text-slate-300 text-sm leading-relaxed">{program.eligibility}</p>
+                          <p className="text-slate-300 text-sm leading-relaxed">{program.eligibility_notes || 'Please review program details for eligibility requirements.'}</p>
                         </div>
                       </div>
                     </div>
