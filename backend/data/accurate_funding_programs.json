@@ -939,102 +939,119 @@
       "name": "Digital Europe Programme - Digital Skills",
       "provider": "European Commission",
       "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
-      "description": "Funding for digital skills and capacity building.",
+      "description": "Funding under the Digital Europe Programme (DEP) to design and deliver advanced digital skills education and training, and to strengthen Europe’s digital skills ecosystem.",
       "eligibility": {
-        "company_type": "Organizations, universities, companies",
+        "company_type": "Public and private organisations (higher education institutions, VET providers, research organisations, companies, public authorities, NGOs) established in EU Member States or Digital Europe Programme-associated countries",
         "requirements": [
-          "Training/education in digital skills",
-          "Consortium required"
+          "Applicants must be legal entities established in an EU Member State or a country associated to the Digital Europe Programme",
+          "Projects are usually implemented by transnational consortia (typically at least 3–4 independent organisations from different eligible countries, often including higher education institutions and industry/research partners)",
+          "Proposals must design and deliver education, training or support actions that address advanced digital skills needs (for example in AI, data, cloud/HPC, cybersecurity, semiconductors or other key digital technologies), or strengthen digital skills ecosystems in line with the Digital Europe work programmes",
+          "Detailed eligibility conditions (such as minimum numbers of students/trainees, specific target groups and consortium composition) are defined in each call topic on the EU Funding & Tenders Portal"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 100%",
-        "typical_project": "EUR 2-5 million"
+        "percentage": "Most advanced digital skills actions are co-funded at 50% of eligible costs; some coordination and support actions (CSA) can receive up to 100% EU co-financing, and certain SME-focused actions may allow a higher rate (for example 75% for SMEs) depending on the call topic",
+        "typical_project": "EU contributions to individual projects commonly range from about EUR 2–10 million, with project durations of roughly 2–4 years; exact grant amounts and budgets are specified in each call topic"
       },
       "focus_areas": [
         "Digital Skills",
+        "Advanced Digital Skills",
         "AI Training",
         "Cybersecurity Training",
-        "Data Training"
+        "Data Training",
+        "HPC and Cloud",
+        "Semiconductors"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Annual and multiannual calls published under the Digital Europe work programmes (check the EU Funding & Tenders Portal for current deadlines)"
     },
     {
       "id": 32,
       "name": "Digital Europe Programme - AI",
       "provider": "European Commission",
       "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
-      "description": "Funding for AI deployment and testing.",
+      "description": "Funding under the Digital Europe Programme for deploying and scaling artificial intelligence solutions, including testing and experimentation facilities, AI data and cloud infrastructure, and sectoral AI deployment projects.",
       "eligibility": {
-        "company_type": "Companies, organizations",
+        "company_type": "Companies, research organisations, public sector bodies and other organisations established in EU Member States or associated countries",
         "requirements": [
-          "AI implementation project",
-          "Consortium often required"
+          "Project focused on deployment, testing or uptake of AI (e.g. AI testing and experimentation facilities, AI data spaces, sectoral AI deployment, AI-on-demand platform)",
+          "Compliance with the specific topic conditions in the Digital Europe work programme and call text",
+          "For most calls, a consortium of independent organisations from multiple eligible countries (typically at least three entities from three different Member States or associated countries), unless the call explicitly allows single applicants",
+          "Sound technical and business implementation plan, including measures for trustworthy, lawful and ethical AI, data protection and cybersecurity",
+          "Sufficient operational and financial capacity to carry out the project"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50-100%",
-        "typical_project": "EUR 2-10 million"
+        "percentage": "For deployment projects (simple grants), EU co-funding is typically around 50% of eligible costs; some coordination/support or capacity-building actions can receive up to 100% funding, depending on the call topic and type of action.",
+        "typical_project": "Project budgets commonly range from around EUR 2 million to over EUR 10 million, with some flagship AI testing or infrastructure actions significantly larger; exact size and funding rate are specified per call topic in the work programme."
       },
       "focus_areas": [
         "Artificial Intelligence",
         "AI Deployment",
-        "AI Testing"
+        "AI Testing",
+        "Data and Cloud Infrastructure",
+        "Sectoral AI Use Cases"
       ],
-      "deadline": "Multiple calls annually"
+      "deadline": "Multiple calls published periodically under the Digital Europe work programme; deadlines and topics are announced on the EU Funding & Tenders Portal."
     },
     {
       "id": 33,
       "name": "Digital Europe Programme - Cybersecurity",
       "provider": "European Commission",
       "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
-      "description": "Funding for cybersecurity infrastructure and capabilities.",
+      "description": "Funding under the Digital Europe Programme to strengthen EU-wide cybersecurity capacity, infrastructure and skills, including support for cybersecurity infrastructure, operational cooperation, preparedness, skills and deployment of advanced cybersecurity solutions.",
       "eligibility": {
-        "company_type": "Companies, public sector",
+        "company_type": "Companies, public-sector bodies, research organisations, universities and other eligible entities established in EU/EEA Member States or associated countries (specific calls may be restricted, e.g. to public bodies or national coordination centres).",
         "requirements": [
-          "Cybersecurity project",
-          "Critical infrastructure or capacity building"
+          "Project addresses priorities and objectives in the current Digital Europe cybersecurity work programme (e.g. infrastructure, operational cooperation, skills, tools or services).",
+          "Participation in a transnational consortium is required for most calls (typically several entities from different eligible countries), unless a specific call allows single beneficiaries.",
+          "Compliance with Digital Europe Programme rules on security restrictions, third-country participation and procurement where applicable.",
+          "Project proposal meets the call-specific criteria for relevance, implementation quality and impact as set out in each topic description."
         ]
       },
       "funding_details": {
-        "type": "Grant",
-        "percentage": "Up to 100%",
-        "typical_project": "EUR 3-15 million"
+        "type": "Grant (co-funding)",
+        "percentage": "For deployment-type actions, the EU co-funding rate is typically around 50% of eligible costs; some coordination and support actions may be funded at a higher rate (up to 100%). The exact funding rate is defined in each call topic.",
+        "typical_project": "Indicative EU contribution per project often in the range of EUR 3–15 million, depending on the specific cybersecurity call and topic."
       },
       "focus_areas": [
         "Cybersecurity",
         "Critical Infrastructure",
-        "Security Operations Centers"
+        "Security Operations Centers",
+        "Cyber Skills and Capacity Building",
+        "Incident Preparedness and Response"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Annual or multi-annual calls published under the Digital Europe Programme cybersecurity work programme (check the EU Funding & Tenders Portal for current open calls)."
     },
     {
       "id": 34,
       "name": "Innovation Fund - Large Scale Projects",
       "provider": "European Commission",
-      "url": "https://climate.ec.europa.eu/eu-action/funding-climate-action/innovation-fund_en",
-      "description": "Support for demonstration of innovative low-carbon technologies.",
+      "url": "https://climate.ec.europa.eu/eu-action/eu-funding-climate-action/innovation-fund_en",
+      "description": "Support for first-of-a-kind and highly innovative low- and net-zero-carbon projects at commercial scale, helping to decarbonise industry and energy systems in the EU.",
       "eligibility": {
-        "company_type": "All sizes",
-        "min_capex": "EUR 7.5 million",
+        "company_type": "All sizes (single applicants or consortia)",
+        "min_capex": "Generally projects with total capital expenditure (CAPEX) above EUR 7.5 million are considered large-scale (some recent calls define higher CAPEX thresholds per topic).",
         "requirements": [
-          "Innovative low-carbon technology",
-          "Significant GHG emission reduction",
-          "Located in EU/EEA/candidate countries"
+          "Innovative low- or net-zero-carbon technology or process that goes beyond the state of the art",
+          "Significant, credible greenhouse gas (GHG) emission reductions compared with a reference scenario",
+          "Project implemented in an eligible country (EU Member States plus Norway, Iceland and Liechtenstein or other associated countries as specified in each call)",
+          "Project sufficiently mature in terms of planning, business model, and financial/legal structure at the time of application",
+          "Compliance with call-specific award criteria (innovation level, GHG avoidance, project maturity, scalability and cost efficiency)"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60% of additional capex",
-        "typical_award": "EUR 10-100 million+",
+        "percentage": "Regular Innovation Fund grants can cover up to 60% of the project’s relevant costs (typically additional capital and, for large-scale projects, part of operating costs compared to a conventional reference scenario).",
+        "typical_award": "Many large-scale projects receive grants in the order of EUR 10–100+ million per project, with no formal maximum grant limit set in the general rules.",
         "sectors": [
           "Renewables",
           "Energy storage",
           "Industrial processes",
           "CCS/CCU",
-          "Clean products"
+          "Clean products",
+          "Net-zero mobility and other sectors covered by the EU ETS revision"
         ]
       },
       "focus_areas": [
@@ -1043,162 +1060,184 @@
         "Decarbonization",
         "Renewable Energy"
       ],
-      "deadline": "1-2 calls per year"
+      "deadline": "Calls for large-scale projects are launched periodically (roughly once per year); timelines and topics are defined in each specific call for proposals."
     },
     {
       "id": 35,
       "name": "Innovation Fund - Small Scale Projects",
       "provider": "European Commission",
       "url": "https://climate.ec.europa.eu/eu-action/funding-climate-action/innovation-fund_en",
-      "description": "Support for smaller innovative climate projects.",
+      "description": "Support for smaller demonstration projects of innovative low-carbon technologies and processes with total capital expenditure between EUR 2.5 and 7.5 million.",
       "eligibility": {
-        "company_type": "All sizes",
-        "capex": "EUR 2.5 - 7.5 million",
+        "company_type": "All sizes (single applicant or consortium from eligible EU/EEA countries)",
+        "capex": "Total project capital expenditure between EUR 2.5 million and EUR 7.5 million",
         "requirements": [
-          "Innovative climate technology",
-          "GHG reduction",
-          "EU/EEA location"
+          "Innovative low-carbon technology or process in a sector covered by the EU Emissions Trading System (ETS) or producing low-carbon substitute products",
+          "Project located in an eligible EU/EEA country (as defined in the specific call)",
+          "Significant greenhouse gas emission reduction compared to a reference scenario",
+          "Project meets call-specific criteria on innovation, maturity, scalability and cost-efficiency"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60%",
-        "typical_award": "EUR 2-5 million"
+        "percentage": "Up to 60% of the project's relevant capital costs (CAPEX)",
+        "typical_award": "Up to about EUR 4.5 million (maximum grant for small-scale Innovation Fund projects)"
       },
       "focus_areas": [
         "Climate Innovation",
         "Clean Tech",
-        "SME Projects"
+        "SME Projects",
+        "Renewable Energy",
+        "Energy Storage",
+        "Industrial Decarbonization"
       ],
-      "deadline": "Annual call"
+      "deadline": "Annual or periodic small-scale calls published via the EU Funding & Tenders Portal"
     },
     {
       "id": 36,
       "name": "LIFE Programme - Climate Action",
       "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "description": "EU funding for climate change mitigation and adaptation.",
+      "url": "https://cinea.ec.europa.eu/programmes/life/life-climate-action-sub-programme_en",
+      "description": "EU funding under the LIFE Climate Action sub-programme for projects on climate change mitigation, climate change adaptation, and climate governance and information.",
       "eligibility": {
-        "company_type": "All organizations",
+        "company_type": "Public and private organisations (public bodies, companies, NGOs, research organisations, etc.) from LIFE-eligible countries",
         "requirements": [
-          "Climate mitigation or adaptation project",
-          "EU-based"
+          "Project relates to climate change mitigation (e.g. renewable energies, energy efficiency, farming, land use, peatland management), climate change adaptation (e.g. resilience to water scarcity, droughts, forest fires or floods, adaptive technologies for economic sectors, safeguarding natural resources), or climate governance and information (e.g. awareness raising, training and capacity building, law compliance and enforcement, knowledge development, stakeholder participation).",
+          "Applicant and partners are established in an EU Member State or another LIFE-eligible country according to the conditions of the annual LIFE call.",
+          "Project is a best practice, pilot or demonstration project (for mitigation/adaptation) or an information, awareness and dissemination / governance project (for climate governance and information), not pure research.",
+          "Project contributes to the implementation and development of EU climate policy and law and delivers concrete, measurable climate benefits."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60-95%",
-        "typical_project": "EUR 1-10 million"
+        "percentage": "Climate change mitigation, climate change adaptation, and climate governance and information projects receive co-funding of up to 55% of eligible project costs. Certain other LIFE project types (e.g. integrated, preparatory or technical assistance projects) can receive up to 60% under separate schemes.",
+        "typical_project": "Traditional LIFE Climate Action projects often have total budgets from roughly EUR 0.5–5 million, with LIFE contributions commonly in the range of about EUR 0.5–2 million depending on scope and partnership."
       },
       "focus_areas": [
         "Climate Mitigation",
         "Climate Adaptation",
-        "Energy Efficiency"
+        "Climate Governance and Information",
+        "Renewable Energy",
+        "Energy Efficiency",
+        "Resilience to Droughts, Forest Fires and Floods",
+        "Safeguarding Natural Resources",
+        "Awareness Raising",
+        "Training and Capacity Building",
+        "Law Compliance and Enforcement"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Annual calls; specific opening and closing dates are published each year under the LIFE Programme call for proposals."
     },
     {
       "id": 37,
       "name": "LIFE Programme - Nature & Biodiversity",
       "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "description": "Funding for nature conservation and biodiversity projects.",
+      "url": "https://cinea.ec.europa.eu/programmes/life/nature-and-biodiversity_en",
+      "description": "EU funding for projects that protect and restore nature, biodiversity and ecosystems, in particular habitats and species and the Natura 2000 network.",
       "eligibility": {
-        "company_type": "All organizations",
+        "company_type": "All organisations (public and private legal entities) from countries eligible for the LIFE programme",
         "requirements": [
-          "Nature/biodiversity project",
-          "EU species or habitats"
+          "Project falls under the objectives and priority topics of the LIFE Nature and Biodiversity sub-programme (e.g. conservation, restoration or management of species, habitats or Natura 2000 sites, implementation of EU nature and biodiversity policy)",
+          "Applicant is a legal person established in an EU Member State or another country associated with LIFE, as defined in the annual call documents",
+          "Project complies with the specific eligibility and admissibility criteria of the relevant LIFE call for proposals (e.g. Standard Action Projects, Strategic Nature Projects)",
+          "Proposal is submitted electronically via the EU Funding & Tenders Portal within the call deadline"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60-75%",
-        "typical_project": "EUR 0.5-5 million"
+        "percentage": "For Standard Action Projects, EU co-financing is generally up to 60% of total eligible costs; this may increase up to 75% for projects that focus on concrete conservation actions for priority habitats or species and allocate at least 50% of eligible costs to such actions, subject to current call conditions.",
+        "typical_project": "In recent calls, LIFE Nature and Biodiversity projects have often received EU contributions in the range of about EUR 1–10 million per project, depending on scope and project type."
       },
       "focus_areas": [
         "Biodiversity",
         "Nature Conservation",
-        "Habitats"
+        "Habitats",
+        "Species Protection",
+        "Natura 2000"
       ],
-      "deadline": "Annual call"
+      "deadline": "Annual calls (specific topics and deadlines are published each year on the EU Funding & Tenders Portal)"
     },
     {
       "id": 38,
-      "name": "LIFE Programme - Circular Economy",
-      "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/life_en",
-      "description": "Support for circular economy and waste reduction projects.",
+      "name": "LIFE Programme - Circular Economy and Quality of Life",
+      "provider": "European Commission / CINEA",
+      "url": "https://cinea.ec.europa.eu/programmes/life/circular-economy-and-quality-life_en",
+      "description": "EU grants for projects that advance the circular economy and zero pollution, including recovery of resources from waste and measures to protect, restore and improve the environment and citizens’ quality of life.",
       "eligibility": {
-        "company_type": "All organizations",
+        "company_type": "Legal entities established in EU Member States or associated countries (public bodies, private companies, NGOs, universities)",
         "requirements": [
-          "Circular economy project",
-          "Waste reduction/resource efficiency"
+          "Project clearly contributes to LIFE Circular Economy and Quality of Life objectives (e.g. circular economy, waste, air, water, soil, chemicals, noise, urban environment, environmental governance)",
+          "Complies with the specific topic, technical and financial eligibility criteria in the yearly LIFE call"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 60%",
-        "typical_project": "EUR 1-5 million"
+        "percentage": "Up to 60% of eligible costs for most projects under this sub-programme (higher rates for some specific LIFE call types)",
+        "typical_project": "EU contribution typically around EUR 2–10 million; total project budgets usually in the low multi-million range"
       },
       "focus_areas": [
-        "Circular Economy",
-        "Waste Management",
-        "Resource Efficiency"
+        "Circular economy and waste",
+        "Waste reduction and resource efficiency",
+        "Zero pollution (air, water, soil, noise, chemicals, industrial emissions)",
+        "Sustainable management of natural resources and urban environment",
+        "Environmental governance and implementation of EU environmental law"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Annual calls (normally opening in late April/May and closing around September; see current LIFE call fiche)"
     },
     {
       "id": 39,
-      "name": "CEF Transport",
-      "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility_en",
-      "description": "Connecting Europe Facility for transport infrastructure.",
+      "name": "Connecting Europe Facility (CEF) for Transport",
+      "provider": "European Commission / CINEA",
+      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility/transport-infrastructure_en",
+      "description": "EU grant scheme that co-finances TEN-T transport infrastructure projects, focusing on cross-border links, removal of bottlenecks, multimodal hubs and modern, safe and sustainable transport networks.",
       "eligibility": {
-        "company_type": "Transport companies, infrastructure operators",
+        "company_type": "EU Member States and, with their agreement, public or private undertakings and bodies (e.g. infrastructure managers, transport operators, ports, cities, regions)",
         "requirements": [
-          "TEN-T network project",
-          "Cross-border or bottleneck removal"
+          "Project located on, or directly serving, the TEN-T core or comprehensive network",
+          "Contribution to cross-border sections, bottleneck removal, missing links or key EU priorities (e.g. multimodal hubs, AFIF, military mobility) in line with the specific call text"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 30-50% (higher for cohesion countries)",
-        "typical_project": "EUR 10-100 million+"
+        "percentage": "Typically up to 30% of eligible costs for works (up to 50% for studies/priority actions and up to 85% for cohesion-funded projects)",
+        "typical_project": "Large infrastructure projects with EU contribution often in the range of EUR 10–100+ million, depending on mode and call"
       },
       "focus_areas": [
-        "Transport Infrastructure",
-        "Rail",
-        "Ports",
-        "Multimodal Transport"
+        "TEN-T transport infrastructure",
+        "Rail and inland waterways",
+        "Ports, terminals and logistics hubs",
+        "Multimodal transport and traffic management systems",
+        "Alternative fuels infrastructure and military mobility (specific calls)"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Recurring calls under the CEF Transport work programme (usually yearly; exact deadlines defined in each call)"
     },
     {
       "id": 40,
-      "name": "CEF Energy",
-      "provider": "European Commission",
-      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility_en",
-      "description": "Funding for trans-European energy infrastructure.",
+      "name": "Connecting Europe Facility (CEF) for Energy",
+      "provider": "European Commission / CINEA",
+      "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility/energy-infrastructure-connecting-europe-facility-0_en",
+      "description": "EU grants for trans-European energy infrastructure, supporting cross-border electricity, gas, hydrogen, smart grids, CO2 networks and cross-border renewable energy projects under the TEN-E policy.",
       "eligibility": {
-        "company_type": "Energy companies, TSOs",
+        "company_type": "Energy companies, TSOs and other public or private legal entities (project developers, public authorities, NGOs, research institutions, etc.) established in eligible countries, usually with the agreement of the concerned Member States.",
         "requirements": [
-          "Projects of Common Interest (PCI)",
-          "Cross-border energy infrastructure"
+          "Project is on the official Union list of Projects of Common Interest (PCI) or Projects of Mutual Interest (PMI), or holds CB RES status for cross-border renewable energy.",
+          "Cross-border energy infrastructure with impact on at least two countries and contributing to TEN-E objectives (market integration, security of supply, decarbonisation)."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50%",
-        "typical_project": "EUR 10-100 million+"
+        "percentage": "Up to 50% of eligible costs for studies and works (with higher co-funding rates, up to about 70–75%, possible for certain projects such as outermost regions or high security-of-supply/solidarity cases).",
+        "typical_project": "Large cross-border infrastructure projects, with EU contributions often in the range of EUR 10–100+ million for works on PCIs/PMIs."
       },
       "focus_areas": [
         "Energy Infrastructure",
-        "Grid",
-        "Gas",
-        "CO2 Transport",
-        "Smart Grids"
+        "Grid (electricity transmission and smart grids)",
+        "Gas infrastructure",
+        "CO2 Transport (cross-border CO2 networks)",
+        "Smart Grids and digitalised energy systems",
+        "Hydrogen infrastructure",
+        "Cross-border renewable energy projects (CB RES)"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Typically one PCI/PMI call per year for energy infrastructure, plus separate windows for cross-border renewable energy; exact deadlines are defined in each call fiche."
     },
     {
       "id": 41,
@@ -1207,110 +1246,109 @@
       "url": "https://cinea.ec.europa.eu/programmes/connecting-europe-facility_en",
       "description": "Funding for digital connectivity infrastructure.",
       "eligibility": {
-        "company_type": "Companies, public sector",
+        "company_type": "Companies and public-sector organisations (legal entities, public or private bodies)",
         "requirements": [
-          "Digital infrastructure project",
-          "Pan-European relevance"
+          "Digital connectivity infrastructure project (e.g. 5G corridors, backbone networks, cross-border connectivity)",
+          "Pan-European relevance and alignment with CEF Digital work programme priorities",
+          "Applicants established in eligible countries as defined in each call (typically EU Member States and associated countries)"
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50-75%",
-        "typical_project": "EUR 5-50 million"
+        "percentage": "Co-funding rates typically between 30% and 75% of eligible costs depending on action type, location and call conditions; some coordination and support actions may be funded up to 100%.",
+        "typical_project": "Single-project EU contributions usually range from a few million up to several tens of millions of euros (roughly EUR 5–50 million), depending on scope."
       },
       "focus_areas": [
         "5G Corridors",
         "Digital Service Infrastructure",
         "Connectivity"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Calls are launched periodically under the CEF Work Programmes; each call has its own deadline on the EU Funding & Tenders Portal."
     },
     {
       "id": 42,
-      "name": "Nordic Innovation - Green Growth",
-      "provider": "Nordic Energy Research / Nordic Innovation",
-      "url": "https://www.nordicenergy.org/funding/",
-      "description": "Funding for Nordic collaboration on sustainable solutions.",
+      "name": "Nordic Green Growth Research and Innovation Programme",
+      "provider": "NordForsk / Nordic Innovation / Nordic Energy Research",
+      "url": "https://www.nordicinnovation.org/programs/nordic-green-growth-research-and-innovation-program",
+      "description": "Joint Nordic research and innovation programme (2016–2020) that funded large projects on green growth to accelerate the transition towards a sustainable Nordic society, promoting green economic growth, sustainability and competitiveness.",
       "eligibility": {
-        "company_type": "Nordic companies/organizations",
+        "company_type": "Nordic research organisations, companies, public-sector bodies, NGOs and other organisations based in the Nordic countries.",
         "requirements": [
-          "Consortium with partners from min 3 Nordic countries",
-          "Green/sustainable innovation"
+          "Consortium involving partner institutions/industry from at least three Nordic countries, with the host entity based in a Nordic country.",
+          "Project clearly contributes to green growth (e.g. low-carbon and resource-efficient solutions, circular economy, sustainable regional development and competitiveness) as defined in the call text."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50%",
-        "typical_project": "EUR 100,000 - 500,000"
+        "percentage": "For industry-driven projects (Module II), public funding (including Nordic Innovation and other public sources) could cover up to around 50% of total project costs; co-funding was encouraged for research-driven projects (Module I).",
+        "typical_project": "Total programme budget was NOK 73 million for six projects; individual projects typically had total budgets around EUR 1–1.5 million, with Nordic funding covering up to about half for industry-driven projects."
       },
       "focus_areas": [
-        "Green Growth",
-        "Circular Economy",
-        "Clean Energy",
-        "Sustainable Solutions"
+        "Green growth and low-carbon innovation",
+        "Resource efficiency and circular economy",
+        "Clean energy and sustainable production",
+        "Sustainable regional development and competitiveness"
       ],
-      "deadline": "Annual calls"
+      "deadline": "One-off call in 2016 (programme 2016–2020, now closed; no current recurring calls under this specific programme)."
     },
     {
       "id": 43,
-      "name": "Nordic Innovation - Digital Transformation",
+      "name": "Nordic Innovation – Digitalisation, AI & Data (various calls)",
       "provider": "Nordic Innovation",
-      "url": "https://www.nordicinnovation.org",
-      "description": "Support for Nordic digital innovation collaboration.",
+      "url": "https://www.nordicinnovation.org/programs/ai-and-data",
+      "description": "Digitalisation and AI-related programmes and calls that fund Nordic cross-border innovation projects using data and artificial intelligence.",
       "eligibility": {
-        "company_type": "Nordic companies",
+        "company_type": "Nordic companies and organisations (exact eligibility defined in each call).",
         "requirements": [
-          "Nordic consortium",
-          "Digital innovation focus"
+          "Applicants based and operating in one or more Nordic countries.",
+          "Normally a Nordic consortium with partners from at least three Nordic countries (see specific call text).",
+          "Project aligned with the digitalisation, AI or data theme of the relevant call."
         ]
       },
       "funding_details": {
         "type": "Grant",
-        "percentage": "Up to 50%",
-        "typical_project": "EUR 200,000 - 600,000"
+        "percentage": "Nordic Innovation usually requires at least 50% co-funding from project partners, and in many calls public funding (including Nordic Innovation) may not exceed 50% of total project costs; always check the specific call text.",
+        "typical_project": "Funding amounts vary by call; for example, the 'Applied Ethical AI on Nordic Patient Records' call provided NOK 5.8 million in grant funding for a single AI project with at least 50% co-financing."
       },
       "focus_areas": [
-        "Digital Transformation",
+        "Digitalisation",
         "AI",
         "Data",
         "Innovation"
       ],
-      "deadline": "Annual calls"
+      "deadline": "Individual calls with their own deadlines; there is no single recurring annual 'digital transformation' call."
     },
     {
       "id": 44,
-      "name": "Cooperation between Companies and Research Organizations",
+      "name": "Co-Creation",
       "provider": "Business Finland",
-      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/cooperation-between-companies-and-research-organizations/",
-      "description": "Funding for joint actions between companies and research organizations to strengthen business competitiveness and create new international business opportunities. Includes Co-Innovation, Co-Creation, Co-Research, and Research to Business funding.",
+      "url": "https://www.businessfinland.fi/en/services/funding/funding-services/cooperation-between-companies-and-research-organizations/co-creation/",
+      "description": "Funding for research organizations to develop a new research idea together with companies so that it can evolve into a joint Co-Innovation project. The aim is to create significant international business opportunities for companies and enable high-level scientific research in the research organization.",
       "eligibility": {
-        "company_type": "Companies and research organizations (universities, research institutes)",
+        "company_type": "Research and knowledge-dissemination organisations (e.g. universities, universities of applied sciences, research institutions)",
         "requirements": [
-          "Joint project between company and research organization",
-          "Research benefits Finnish export business",
-          "Equal partnership between parties",
-          "New business opportunities focus"
+          "Applicant is a research or knowledge-dissemination organisation whose main goal is to independently conduct basic or industrial research or experimental development, or widely disseminate results through teaching, publications or data transfer",
+          "Research organisation and companies want to develop a new research idea and its potential together OR build a new consortium and competence network and engage companies in joint development",
+          "Idea has high potential and broad applicability and can lead to a joint Co-Innovation project and new international business for Finnish companies",
+          "Project plan focuses on demonstrating the relevance and demand of the idea, engaging companies and building a business and international cooperation network",
+          "Application and brief project plan submitted via Business Finland’s funding e-service in line with Co-Creation call instructions"
         ]
       },
       "funding_details": {
-        "type": "Grant (varies by sub-program)",
-        "programs": {
-          "Co-Innovation": "Joint actions for business competitiveness",
-          "Co-Creation": "Preparation funding for building teams and networks",
-          "Co-Research": "Research projects for new expertise",
-          "Research_to_Business": "Commercialization preparation"
-        },
-        "typical_amount": "Varies by program type"
+        "type": "Grant",
+        "percentage": "Business Finland covers 80% of the accepted total project costs; the research organisation’s self-financing share is 20%.",
+        "max_amount": "Total project costs may not exceed EUR 100,000 per idea (even if several research organisations participate, the combined maximum remains EUR 100,000).",
+        "typical_duration": "Typically 4–6 months per Co-Creation project.",
+        "cost_model": "Funding is based on an overhead cost multiplier of 20% and an indirect personnel cost multiplier of 50% for eligible personnel costs; eligible costs include salaries and wages, indirect personnel costs, overheads, travel, materials and supplies, and necessary purchased services, while e.g. research work, grants, marketing and equipment investments are not accepted as project costs."
       },
       "focus_areas": [
         "Research Collaboration",
-        "Innovation",
-        "Commercialization",
-        "Export Business",
-        "Technology Transfer",
-        "Public-Private Partnership"
+        "Co-Innovation Preparation",
+        "International Business Opportunities",
+        "Business Networks",
+        "International Cooperation"
       ],
-      "deadline": "Continuous application"
-    }
+      "deadline": "Continuous application (Co-Creation funding can be applied for at all times; call information and any updates are provided on the service page)."
+    }    
   ]
 }
